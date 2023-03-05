@@ -118,12 +118,12 @@ main{
 .wrapper_nav{
     position: absolute;
     width: 100%;
-    bottom: 2px;
+    bottom: 0;
     left: 0;
     height: 2px;
 }
 .progress{
     height: 2px;
-    background: linear-gradient(to left, rgb(137, 75, 161), rgb(216, 161, 238));
+    background: linear-gradient(to left, rgb(137, 75, 161), rgb(244, 219, 253), rgb(137, 75, 161));
     border-radius: 1px;
 }
