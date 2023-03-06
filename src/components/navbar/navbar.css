@@ -1,8 +1,9 @@
 header {
-    width: 100%;
+    width: 100vw;
     height: 4rem;
     position: fixed;
     top: 0;
+    left: 0;
     color: var(--title-color);
     z-index: 100;
     display: flex;
