@@ -134,19 +134,29 @@ menu {
 .menu_slider{
     position: fixed;
     display: flex;
-    align-items: start;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: calc(100% - 6rem);
     bottom: 2rem;
-    border-radius: 0 0 0 50vw;
-    background: linear-gradient(225deg, white, pink);
+    left: 0;
+    background: url(../../assets/img/lirios.jpg);
+    transition: left .5s ease-in-out;
 }
-.menu_slider div{
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border-radius: 0 0 0 50vw;
+.menu_slider.hide{
+    left: 150vw;
+}
+.child_menu{
+    width: calc(100% - 18px);
+    height: calc(100% - 18px);
+    opacity: .9;
     background: linear-gradient(225deg, var(--body-color), white);
+    position: relative;
+    left: 0;
+    transition: left 1s ease-in-out;
+}
+.child_menu.hide{
+    left: 150vw;
 }
 
 @media screen and (min-width: 789px) {

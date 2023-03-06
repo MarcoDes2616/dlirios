@@ -49,16 +49,14 @@ const Navbar = () => {
                 <motion.div className='progress'
                     style={{ scaleX: scrollYProgress }} />
             </div>
-            {   isOpen && <Menuslider isOpen={isOpen} />
-                // <div className="menu_slider" id="menu">
-                //     <div>
-                //         <i className='bx bx-x bx-md'></i>
-                //         <img src={logo} alt="logo empresa" />
-                //         <a href="#">Home</a>
-                //         <a href="#">Productos</a>
-                //     </div>
-                // </div>
-                }
+            <div className={isOpen ? "menu_slider" : "menu_slider hide"} id="menu">
+                <div className={isOpen ? "child_menu" : "child_menu hide"}>
+                    <i className='bx bx-x bx-md'></i>
+                    <img src={logo} alt="logo empresa" />
+                    <a href="#">Home</a>
+                    <a href="#">Productos</a>
+                </div>
+            </div>
         </header>
     );
 };
