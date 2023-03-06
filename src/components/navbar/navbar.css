@@ -9,8 +9,8 @@ header {
     display: flex;
     align-items: center;
     background: url(../../assets/img/logo.png);
-    background-position: 0%;
-    background-size: 80%;
+    background-position: 110%;
+    background-size: 60%;
     background-repeat: no-repeat;
 }
 
