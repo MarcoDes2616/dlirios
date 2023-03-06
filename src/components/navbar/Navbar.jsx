@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import { useScroll, motion } from 'framer-motion';
+import Menuslider from './Menuslider';
 
 const Navbar = () => {
     const [bgHeader, setBgHeader] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
     const { scrollYProgress } = useScroll();
 
     const setState = () => {
@@ -21,16 +23,16 @@ const Navbar = () => {
         <header className={bgHeader ? "header_bg" : ""}>
             <img src={logo} alt="logo empresa" />
             <nav>
-            <h1 className="txtkalan">Dlirios Insumos</h1>
+                <h1 className="txtkalan">Dlirios Insumos</h1>
                 <menu>
                     <a href="#ancla_menu_home">
                         <p id="change1" className="change">
-                            HOME
+                            Home
                         </p>
                     </a>
                     <a href="#ancla_menu_productos">
                         <p id="change2" className="">
-                            PRODUCTOS
+                            Productos
                         </p>
                     </a>
                 </menu>
@@ -40,13 +42,23 @@ const Navbar = () => {
                         <i className='bx bx-shopping-bag bx-sm'></i>
                         <span className="bag_count" id="bag_count"></span>
                     </div>
-                    <i className='bx bx-grid-alt bx-sm' id="btn_menu"></i>
+                    <i onClick={() => setIsOpen(!isOpen)} className='bx bx-grid-alt bx-sm' id="btn_menu"></i>
                 </div>
             </nav>
             <div className='wrapper_nav'>
                 <motion.div className='progress'
                     style={{ scaleX: scrollYProgress }} />
             </div>
+            {   isOpen && <Menuslider isOpen={isOpen} />
+                // <div className="menu_slider" id="menu">
+                //     <div>
+                //         <i className='bx bx-x bx-md'></i>
+                //         <img src={logo} alt="logo empresa" />
+                //         <a href="#">Home</a>
+                //         <a href="#">Productos</a>
+                //     </div>
+                // </div>
+                }
         </header>
     );
 };
