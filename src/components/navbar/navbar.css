@@ -161,7 +161,7 @@ menu {
     background: linear-gradient(225deg, var(--body-color), white);
     position: relative;
     left: 0;
-    transition: left 1s ease-in-out;
+    transition: left 1.2s ease-in-out;
     font-size: 1.7rem;
 }
 .child_menu.hide{
