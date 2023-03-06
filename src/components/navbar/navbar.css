@@ -129,7 +129,7 @@ menu {
 
 .progress {
     height: 2px;
-    background: linear-gradient(to left, rgb(137, 75, 161), rgb(244, 219, 253), rgb(137, 75, 161));
+    background: linear-gradient(to left, rgb(137, 75, 161), var(--first-color), rgb(137, 75, 161));
     border-radius: 1px;
 }
 .menu_slider{
@@ -141,7 +141,7 @@ menu {
     height: calc(100% - 4rem);
     bottom: 0;
     left: 0;
-    background: url(../../assets/img/lirios.jpg);
+    background: url(../../assets/img/lirio2.jpg);
     background-size: cover;
     transition: left .5s ease-in-out;
 }
@@ -183,7 +183,10 @@ menu {
         background: rgba(255, 255, 255, 0.4);
         justify-content: space-between;
         height: 5rem;
-        padding: 0 1rem;
+        padding: 0 calc(50vw - 550px);
+    }
+    h1{
+        font-size: 2.3rem;
     }
     .header_bg{
         background: var(--body-color);
@@ -196,6 +199,7 @@ menu {
     nav{
         background-color: transparent;
         width: calc(100% - 120px);
+        margin-right: 1rem;
     }
     menu {
         display: flex;
@@ -209,5 +213,8 @@ menu {
     }
     .bx-grid-alt{
         display: none;
+    }
+    .wrapper_nav, .progress{
+        height: 3px;
     }
 }
