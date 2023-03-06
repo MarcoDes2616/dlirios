@@ -206,25 +206,26 @@ body.dark{
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 200px;
   margin: 4rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 4rem;
+  top: 3.8rem;
+  border-top: 3px inset var(--border-color);
+  border-bottom: 3px inset var(--border-color);
 }
 .parallax p{
   color: var(--body-color);
   text-align: center;
   width: 90%;
-  max-width: 500px;
+  max-width: 550px;
   font-size: 1.2rem;
   filter: drop-shadow( 1px 1px var(--title-color));
 }
 .parallax p span{
   color: var(--first-color);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 /*============= FILTRO PRODUCTOS ===========*/
@@ -302,6 +303,7 @@ body.dark{
     background: url(./assets/img/parallax.jpg);
     background-attachment: fixed;
     background-size: cover;
+    top: 4.3rem;
   }
   .parallax p{
     font-size: 1.4rem;
