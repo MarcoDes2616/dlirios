@@ -137,10 +137,11 @@ menu {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: calc(100% - 6rem);
-    bottom: 2rem;
+    height: calc(100% - 4rem);
+    bottom: 0;
     left: 0;
     background: url(../../assets/img/lirios.jpg);
+    background-size: cover;
     transition: left .5s ease-in-out;
 }
 .menu_slider.hide{
@@ -150,13 +151,30 @@ menu {
     width: calc(100% - 18px);
     height: calc(100% - 18px);
     opacity: .9;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 15px;
     background: linear-gradient(225deg, var(--body-color), white);
     position: relative;
     left: 0;
     transition: left 1s ease-in-out;
+    font-size: 1.7rem;
 }
 .child_menu.hide{
     left: 150vw;
+}
+.child_menu img{
+    width: 70%;
+    max-width: 320px;
+    display: block;
+    filter: drop-shadow(0 0 15px var(--button-color));
+}
+.child_menu a{
+    color: var(--first-color);
+    font-style: italic;
 }
 
 @media screen and (min-width: 789px) {
@@ -172,7 +190,7 @@ menu {
     header img{
         display: block;
         width: 120px;
-        filter: drop-shadow(2px 2px 1px var(--first-color));
+        filter: drop-shadow(0 0 15px var(--button-color));
     }
     nav{
         background-color: transparent;
@@ -185,7 +203,7 @@ menu {
         gap: 1.4rem;
         color: var(--title-color);
         font-weight: 800;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-style: oblique;
     }
     .bx-grid-alt{
