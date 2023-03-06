@@ -9,8 +9,8 @@ header {
     display: flex;
     align-items: center;
     background: url(../../assets/img/logo.png);
-    background-position: 110%;
-    background-size: 60%;
+    background-position: 0%;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 
@@ -38,9 +38,6 @@ nav {
 
 h1 {
     font-size: 1.9rem;
-    background: url(../../assets/img/f_titulo.png);
-    background-size: 140% 150%;
-    background-position: center;
 }
 
 .txtkalan {
