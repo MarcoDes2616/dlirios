@@ -38,6 +38,9 @@ nav {
 
 h1 {
     font-size: 1.9rem;
+    background: url(../../assets/img/f_titulo.png);
+    background-size: 140% 150%;
+    background-position: center;
 }
 
 .txtkalan {
