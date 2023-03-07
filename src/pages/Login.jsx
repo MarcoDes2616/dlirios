@@ -50,7 +50,7 @@ const Login = () => {
         <div className='login_container'>
             {/* <img src="images/bg_login.jpg" alt="bg_login" className='login_bg' /> */}
             <div className="container_form">
-                <form onSubmit={handleSubmit(submitForm)}>
+                <form onSubmit={handleSubmit(submitForm)}><br /><br /><br />
                     <h1>Login</h1>
                     <div className="login_box">
                         <label>Email</label>
