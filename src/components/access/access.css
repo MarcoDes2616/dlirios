@@ -24,6 +24,7 @@
     border: 2px solid var(--button-color);
     border-left: none;
     color: var(--button-color);
+    transition: left .5s;
 }
 .user_wrapper{
     border-bottom: none;
