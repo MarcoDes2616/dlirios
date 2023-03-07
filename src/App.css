@@ -318,10 +318,16 @@ form h4{
   margin: 1rem auto;
   height: 2.8rem;
   border: 3px inset var(--body-color);
-  border-radius: 15px;
+  border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--first-color);
+}
+.login_box span{
+  color: rgb(169, 4, 4);
+  font-size: 1rem;
+  padding-left: .5rem;
+  margin-top: -.5rem;
 }
 
 

@@ -49,15 +49,15 @@ const Login = () => {
         <div className='login_container'>
             {/* <img src="images/bg_login.jpg" alt="bg_login" className='login_bg' /> */}
             <div className="container_form">
-                <form onSubmit={handleSubmit(submitForm)}><br /><br /><br />
+                <form onSubmit={handleSubmit(submitForm)}>
                     <h4>Iniciar Sesión</h4>
                     <div className="login_box">
-                        <label>Email</label>
+                        <label>Email<span>*</span></label>
                         <input type="email" placeholder="example@example.com" id='email'
                             {...register('email',{
                                 required: {
                                     value: true,
-                                    message: 'Este campo es obligatorio'
+                                    message: '* Este campo es obligatorio'
                                 },
                                 // pattern: {
                                 //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -66,12 +66,12 @@ const Login = () => {
                             })}
                         />
                         {errors.email && <span className='error_alert'>{errors.email.message}</span>}
-                        <label>Contraseña</label>
+                        <label>Contraseña<span>*</span></label>
                         <input type="password" id='password'
                             {...register('password',{
                                 required: {
                                     value: true,
-                                    message: 'Este campo es obligatorio'
+                                    message: '* Este campo es obligatorio'
                                 }
                             })}
                         />
