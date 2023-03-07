@@ -7,9 +7,6 @@
     color: var(--first-color);
     filter: drop-shadow(1px 1px 0px var(--text-color));
 }
-.access p{
-    filter: drop-shadow(1px 1px 0px var(--text-color));
-}
 .user_wrapper, .rrss_wrapper{
     position: fixed;
     left: 0;
@@ -55,14 +52,21 @@
     justify-content: center;
     padding-left: 3.5rem;
 }
+.users a{
+    color: var(--button-color);
+    filter: drop-shadow(1px 1px 0px var(--text-color));
+}
+.contact_us p{
+    filter: drop-shadow(1px 1px 0px var(--text-color));
+}
 .contact_us img{
     max-height: 2rem;
     filter: drop-shadow(0 0 5px var(--button-color));
 }
-.user_wrapper .bx{
+.animate{
     animation: icons 5s infinite linear;
 }
-.rrss_wrapper .bx{
+.animate_rrss{
     animation: icons 5s infinite 2.5s linear;
 }
 @keyframes icons {

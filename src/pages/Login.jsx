@@ -18,7 +18,6 @@ const Login = () => {
     }, [pathname]);
 
     const submitForm = async data => {
-        console.log(data)
         await dispatch(userLoginEmail(data))
             .then( () => {
                 navigate('/')

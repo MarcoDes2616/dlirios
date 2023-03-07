@@ -3,11 +3,13 @@ import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import { useScroll, motion } from 'framer-motion';
 import Menuslider from './Menuslider';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [bgHeader, setBgHeader] = useState(false)
     const [isOpen, setIsOpen] = useState(false);
     const { scrollYProgress } = useScroll();
+    const navigate = useNavigate()
 
     const setState = () => {
         if (window.scrollY >= 100) {
@@ -23,7 +25,7 @@ const Navbar = () => {
         <header className={bgHeader ? "header_bg" : ""}>
             <img src={logo} alt="logo empresa" />
             <nav>
-                <h1 className="txtkalan">Dlirios Insumos</h1>
+                <h1 onClick={() => navigate("/")} className="txtkalan">Dlirios Insumos</h1>
                 <menu>
                     <a href="#ancla_menu_home">
                         <p id="change1" className="change">
