@@ -4,7 +4,7 @@ import Register from './pages/Register'
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/Loadder'
@@ -14,20 +14,29 @@ import Acces from './components/access/Acces'
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
   const dispatch = useDispatch();
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
+    getStorage()
     dispatch(setIsLoading(true))
     const interval = setInterval(() => {
       dispatch(setIsLoading(false))
     }, 2500)
   }, [])
 
+  const getStorage = () => {
+    if(localStorage.getItem("cart")){
+        setCart(JSON.parse(localStorage.getItem("cart")))
+    } else {
+        localStorage.setItem("cart", JSON.stringify([]))
+    }
+  };
+
   return (
     <div className="App">
       <HashRouter>
         {isLoading && <Loadder />}
         <Navbar />
-        <Acces />
         <Routes>
           <Route path='/login' element={<Login />}/>
           <Route path='/' element={<Home />}/>

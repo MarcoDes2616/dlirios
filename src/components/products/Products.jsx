@@ -24,8 +24,6 @@ const Products = () => {
     useEffect(() => {
         getproducts()
     }, [])
-
-    console.log(vinilesList);
     
     return (
         <div className='section'>

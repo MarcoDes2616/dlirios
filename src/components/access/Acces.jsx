@@ -3,12 +3,15 @@ import "./access.css"
 import ws from "../../assets/img/rrss/ws.png"
 import insta from "../../assets/img/rrss/insta.png"
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCart } from '../../store/slices/cart.slice';
 
 const Acces = () => {
     const token = window.localStorage.getItem("token")
     const [rrss, setRrss] = useState(false)
     const [login, setLogin] = useState(false)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -20,6 +23,7 @@ const Acces = () => {
 
     const logout = () => {
         localStorage.setItem("token", "")
+        dispatch(setCart([]))
         alert("Te esperamos pronto con mas productos increibles!")
     }
 

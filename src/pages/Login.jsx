@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Loadder from '../components/Loadder';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
+import { setCart } from '../store/slices/cart.slice';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,15 +14,22 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState(undefined);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [form, setForm] = useState("login")
+    const token = localStorage.getItem("token")
     
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [pathname]);
 
+    const cargarProductos = () => {
+            const productsLocal = JSON.parse(localStorage.getItem("cart"))
+            dispatch(setCart(productsLocal))
+    }
+
     const submitForm = async data => {
         await dispatch(userLoginEmail(data))
             .then( () => {
                 navigate('/')
+                cargarProductos()
             })
             .catch( (err) => {
                 if (err.code == 'auth/user-not-found') {
@@ -31,6 +39,7 @@ const Login = () => {
                 }
                 navigate(-1)
             })
+        
 
     }
 

@@ -25,6 +25,7 @@
     height: 14rem;
     border-radius: 8px 8px 0 0;
     object-fit: contain;
+    z-index:0;
 }
 
 .article_description{
@@ -51,8 +52,8 @@
     font-size: 2rem;
     bottom: 2.75rem;
     right: 0.5rem;
-    z-index: 50;
     border: none;
+    z-index: 1;
 }
 .add:hover{
     cursor: pointer;
