@@ -26,26 +26,32 @@ const Home = () => {
           </div>
         </div>
       </div>
+<<<<<<< Updated upstream
       <Parallax />
       <div class="filter_contain" id="filter_contain">
             <div class="all">
+=======
+      
+      <div className="filter_contain" id="filter_contain">
+            <div className="all">
+>>>>>>> Stashed changes
                 <h4 id="ancla_menu_productos">Mostrar Todos</h4>
                 <p>Todos los productos</p>
             </div>
-            <div class="materiales">
-                <div class="viniles">
+            <div className="materiales">
+                <div className="viniles">
                     <h4>Viniles</h4>
                     <p>Disponibles <span id="count_viniles"></span></p>
                 </div>
-                <div class="cintas">
+                <div className="cintas">
                     <h4>Cintas</h4>
                     <p>Disponibles <span id="count_cintas"></span></p>
                 </div>
-                <div class="apliques">
+                <div className="apliques">
                     <h4>Apliques</h4>
                     <p>Disponibles <span id="count_apliques"></span></p>
                 </div>
-                <div class="decorables">
+                <div className="decorables">
                     <h4>Decorables</h4>
                     <p>Disponibles <span id="count_decorables"></span></p>
                 </div>
