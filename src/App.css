@@ -281,11 +281,11 @@ body.dark{
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 7rem 0;
+  padding: 9rem 0;
 }
 .container_form{
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   padding: 2rem;
 }
 form{
@@ -314,18 +314,18 @@ form h4{
   padding: 0 1rem;
 }
 .login_btn{
-  width: 80%;
+  width: 70%;
   margin: 1rem auto;
   height: 2.8rem;
   border: 3px inset var(--body-color);
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--first-color);
+  color: var(--button-color);
 }
 .login_box span{
   color: rgb(169, 4, 4);
-  font-size: 1rem;
+  font-size: .9rem;
   padding-left: .5rem;
   margin-top: -.5rem;
 }
