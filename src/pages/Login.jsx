@@ -1,4 +1,4 @@
-import { userLoginEmail, userLoginGoogle } from '../store/slices/users.slice';
+import { userLoginEmail, userLoginGoogle, userSingUpEmail } from '../store/slices/users.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loadder from '../components/Loadder';
@@ -71,6 +71,7 @@ const Login = () => {
 
     return (
         <div className='login_container'>
+            { isLoading && <Loadder /> }
             <div className="container_form">
                 {form == "login" ?
                 <p onClick={() => setForm("")}>Aun no tengo una cuenta</p> : 
