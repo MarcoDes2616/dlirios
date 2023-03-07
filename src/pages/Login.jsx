@@ -50,13 +50,10 @@ const Login = () => {
             {/* <img src="images/bg_login.jpg" alt="bg_login" className='login_bg' /> */}
             <div className="container_form">
                 <form onSubmit={handleSubmit(submitForm)}><br /><br /><br />
-                    <h1>Login</h1>
+                    <h4>Iniciar Sesión</h4>
                     <div className="login_box">
                         <label>Email</label>
-                        <input
-                            type="email"
-                            placeholder="example@example.com"
-                            id='email'
+                        <input type="email" placeholder="example@example.com" id='email'
                             {...register('email',{
                                 required: {
                                     value: true,
@@ -69,12 +66,8 @@ const Login = () => {
                             })}
                         />
                         {errors.email && <span className='error_alert'>{errors.email.message}</span>}
-                    </div>
-                    <div className="login_box">
                         <label>Contraseña</label>
-                        <input
-                            type="password"
-                            id='password'
+                        <input type="password" id='password'
                             {...register('password',{
                                 required: {
                                     value: true,
@@ -86,7 +79,7 @@ const Login = () => {
                     </div>
                     {errorMessage &&  <p className='error_login'>{errorMessage}</p>}
                     {isLoading && <Loadder />}
-                    <button className='btn btn-singUp'>Ingresar</button>
+                    <button className='login_btn'>Ingresar</button>
                     {/* <div className="btn google_session" onClick={ googleLogin }>
                         <img src="/Icons/google_logo.png" alt="" />
                         Ingresar con Google

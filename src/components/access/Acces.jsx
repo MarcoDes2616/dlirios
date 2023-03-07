@@ -30,8 +30,8 @@ const Acces = () => {
                 <i onClick={() => setRrss(!rrss)} className={ rrss ? 'bx bx-like bx-sm' : 'bx bx-like bx-sm animate_rrss'}></i>
                 <div className='contact_us'>
                     <p>Conecta:</p>
-                    <img src={insta} alt="logo instagram" />
-                    <img src={ws} alt="logo whatsapp" />
+                    <a target={'_blank'} href="https://www.instagram.com/vinilesycuerinasdlirios/"><img src={insta} alt="logo instagram" /></a>
+                    <a target={'_blank'} href="https://chat.whatsapp.com/DrTDWypZc0u0pGp89QleGr"><img src={ws} alt="logo whatsapp" /></a>
                 </div>
             </div>
         </div>

@@ -26,12 +26,12 @@
 .user_wrapper{
     border-bottom: none;
     box-shadow: 4px -2px var(--first-color);
-    top: 5rem;
+    top: 5.5rem;
     border-top-right-radius: 2.5rem;
 }
 .rrss_wrapper{
     border-top: none;
-    top: 8rem;
+    top: 8.5rem;
     border-bottom-right-radius: 2.5rem;
     box-shadow: 4px 2px var(--first-color);
 }

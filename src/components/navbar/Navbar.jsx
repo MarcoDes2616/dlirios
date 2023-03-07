@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <header className={bgHeader ? "header_bg" : ""}>
-            <img src={logo} alt="logo empresa" />
+            <img onClick={() => navigate("/")} src={logo} alt="logo empresa" />
             <nav>
                 <h1 onClick={() => navigate("/")} className="txtkalan">Dlirios Insumos</h1>
                 <menu>

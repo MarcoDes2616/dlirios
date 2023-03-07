@@ -16,6 +16,7 @@ header {
 
 header img {
     display: none;
+    cursor: pointer;
 }
 
 .header_bg {
@@ -38,6 +39,7 @@ nav {
 
 h1 {
     font-size: 1.9rem;
+    cursor: pointer;
 }
 
 .txtkalan {

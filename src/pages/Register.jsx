@@ -41,7 +41,7 @@ const Register = () => {
             <div className="container_form">
                 <form onSubmit={handleSubmit(submitForm)}>
                     <h1>Registro</h1>
-                    <div className="login_box">
+                    {/* <div className="login_box">
                         <label>Nombre</label>
                         <input
                             type="text"
@@ -68,7 +68,7 @@ const Register = () => {
                             })}
                         />
                         {errors.username?.type == 'required' && <p className='error_alert'>{errors.username.message}</p>}
-                    </div>
+                    </div> */}
                     <div className="login_box">
                         <label>Email</label>
                         <input
