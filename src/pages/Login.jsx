@@ -49,7 +49,7 @@ const Login = () => {
         setErrorMessage(undefined)
         if(data.password === data.verifyPassword){
             dispatch(userSingUpEmail(data))
-                .then(() => navigate('/login'))
+                .then(() => setForm("login"))
                 .catch((err) =>{
                     setErrorMessage(err.code);
                 })
