@@ -12,7 +12,7 @@ const Login = () => {
     const isLoading = useSelector(state => state.isLoading);
     const [errorMessage, setErrorMessage] = useState(undefined);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [form, setForm] = useState("loginm")
+    const [form, setForm] = useState("login")
     
     useEffect(() => {
         window.scrollTo(0, 0)
