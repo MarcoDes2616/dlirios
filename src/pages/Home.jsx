@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Parallax from '../components/Parallax';
 import { setIsLoading } from '../store/slices/isLoading.slice';
 
 const Home = () => {
   const pathname = useLocation()
   const isLoading = useSelector(state => state.isLoading)
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -34,7 +35,7 @@ const Home = () => {
           <p>Todos los productos</p>
         </div>
         <div className="materiales">
-          <div className="viniles">
+          <div onClick={() => navigate("/products")} className="viniles">
             <h4>Viniles</h4>
             <p>Disponibles <span id="count_viniles"></span></p>
           </div>
