@@ -303,7 +303,7 @@ body.dark{
     background: url(./assets/img/parallax.jpg);
     background-attachment: fixed;
     background-size: cover;
-    top: 4.3rem;
+    top: 4.5rem;
   }
   .parallax p{
     font-size: 1.4rem;

@@ -23,7 +23,7 @@ const Navbar = () => {
         <header className={bgHeader ? "header_bg" : ""}>
             <img src={logo} alt="logo empresa" />
             <nav>
-                <h1 className="txtkalan">Dlirios Insumos</h1>
+                <h1 className="txtkalan">D´Lirios Insumos</h1>
                 <menu>
                     <a href="#ancla_menu_home">
                         <p id="change1" className="change">
