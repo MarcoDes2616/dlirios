@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/Loadder'
 import Products from './components/products/Products'
+import Acces from './components/access/Acces'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -26,6 +27,7 @@ function App() {
       <HashRouter>
         {isLoading && <Loadder />}
         <Navbar />
+        <Acces />
         <Routes>
           <Route path='/login' element={<Login />}/>
           <Route path='/' element={<Home />}/>
