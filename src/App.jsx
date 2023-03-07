@@ -1,6 +1,5 @@
 import './App.css'
 import Login from './pages/Login'
-import Register from './pages/Register'
 import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
@@ -9,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/Loadder'
 import Products from './components/products/Products'
-import Acces from './components/access/Acces'
+import Acces from './components/navbar/Acces'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);

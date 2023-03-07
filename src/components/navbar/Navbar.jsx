@@ -6,7 +6,7 @@ import Menuslider from './Menuslider';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
-import Acces from '../access/Acces';
+import Acces from './Acces';
 
 const Navbar = () => {
     const [bgHeader, setBgHeader] = useState(false)
@@ -43,7 +43,7 @@ const Navbar = () => {
     return (
         <header className={bgHeader ? "header_bg" : ""}>
             <Acces />
-            <img onClick={() => navigate("/")} src={logo} alt="logo empresa" />
+            <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
             <nav>
                 <h1 onClick={() => navigate("/")} className="txtkalan">D´Lirios Insumos</h1>
                 <menu>
