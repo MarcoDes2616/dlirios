@@ -281,12 +281,23 @@ body.dark{
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 9rem 0;
+  padding: 7rem 0;
 }
 .container_form{
   width: 100%;
   max-width: 500px;
   padding: 2rem;
+}
+.container_form p{
+  cursor: pointer;
+  float: right;
+  background: var(--button-color);
+  padding: .5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+  color: var(--body-color);
+  margin-bottom: 1rem;
+  font-style: italic;
 }
 form{
   width: 100%;
@@ -319,9 +330,7 @@ form h4{
   height: 2.8rem;
   border: 3px inset var(--body-color);
   border-radius: 10px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--button-color);
+  font-size: 1.3rem;
 }
 .login_box span{
   color: rgb(169, 4, 4);
