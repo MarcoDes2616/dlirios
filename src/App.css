@@ -134,6 +134,7 @@ body.dark{
   background: url(./assets/img/bg_fp1.jpg);
   background-position: 0 center;
   padding-bottom: 4rem;
+  background-size: cover;
 }
 .img_destacado{
   background: url(./assets/img/viniles.png);
