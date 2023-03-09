@@ -199,7 +199,7 @@ menu {
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 0 1rem;
-    background: linear-gradient(0deg, rgb(248, 210, 216), white);
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(107, 107, 107));
     border: 2px solid var(--button-color);
     border-left: none;
     color: var(--button-color);
