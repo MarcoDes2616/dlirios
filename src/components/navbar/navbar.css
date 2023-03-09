@@ -305,7 +305,7 @@ menu {
         filter: drop-shadow(0 0 15px var(--button-color));
     }
     .header_bg{
-        background: linear-gradient(0deg, rgb(0, 0, 0), rgb(107, 107, 107));
+        background: linear-gradient(0deg, rgb(0, 0, 0) 90%, rgb(107, 107, 107));
     }
     .logo{
         display: block;
