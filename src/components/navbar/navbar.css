@@ -4,7 +4,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    color: var(--title-color);
+    color: white;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@ header {
 }
 
 .header_bg {
-    background: url(../../assets/img/logo.png), var(--body-color);
+    background: url(../../assets/img/logo.png), black;
     background-position: 0%;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -34,12 +34,13 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 h1 {
     font-size: 1.9rem;
     cursor: pointer;
+    filter: drop-shadow(.5px .5px var(--first-color));
 }
 
 .txtkalan {
@@ -294,16 +295,17 @@ menu {
 
 @media screen and (min-width: 789px) {
     header{
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(2, 2, 2, 0.7);
         justify-content: space-between;
         height: 5rem;
         padding: 0 calc(50vw - 550px);
     }
     h1{
         font-size: 2.3rem;
+        filter: drop-shadow(0 0 15px var(--button-color));
     }
     .header_bg{
-        background: var(--body-color);
+        background: linear-gradient(0deg, rgb(0, 0, 0), rgb(107, 107, 107));
     }
     .logo{
         display: block;
