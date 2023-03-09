@@ -214,7 +214,7 @@ body.dark{
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,6 +237,13 @@ body.dark{
 }
 
 /*============= FILTRO PRODUCTOS ===========*/
+.home_products{
+  background: url(./assets/img/bg_ph.jpg);
+  background-position: 0 center;
+  padding-bottom: 4rem;
+  background-size: cover;
+  padding-top: 4rem;
+}
 .filter_contain{
   display: flex;
   padding: 0 .8rem;
