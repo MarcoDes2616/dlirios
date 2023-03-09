@@ -36,20 +36,24 @@ const Home = () => {
             <p>Todos los productos</p>
           </div>
           <div className="materiales">
-            <div onClick={() => navigate("/products")} className="viniles">
+            <div onClick={() => navigate("/products/viniles")} className="viniles">
               <h4>Viniles</h4>
               <p>Disponibles <span id="count_viniles"></span></p>
             </div>
-            <div className="cintas">
+            <div className="cintas" onClick={() => navigate("/products/cintas")}>
               <h4>Cintas</h4>
               <p>Disponibles <span id="count_cintas"></span></p>
             </div>
-            <div className="apliques">
+            <div className="apliques" onClick={() => navigate("/products/apliques")}>
               <h4>Apliques</h4>
               <p>Disponibles <span id="count_apliques"></span></p>
             </div>
-            <div className="decorables">
+            <div className="decorables" onClick={() => navigate("/products/decorables")}>
               <h4>Decorables</h4>
+              <p>Disponibles <span id="count_decorables"></span></p>
+            </div>
+            <div className="decorables" onClick={() => navigate("/products/herramientas")}>
+              <h4>Herramientas</h4>
               <p>Disponibles <span id="count_decorables"></span></p>
             </div>
           </div>

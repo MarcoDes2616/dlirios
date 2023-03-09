@@ -44,8 +44,6 @@ const CardProducts = ({ item }) => {
         }
     }
 
-    console.log(cart);
-
     return (
         <article className='card_article'>
             <button onClick={() => addToCart(item)} className="add" id="product.id">+</button>

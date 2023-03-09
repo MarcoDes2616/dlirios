@@ -1,14 +1,17 @@
 import './App.css'
 import Login from './pages/Login'
-import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/Loadder'
-import Products from './components/products/Products'
-import Acces from './components/navbar/Acces'
+import Viniles from './pages/products/Viniles'
+import Cintas from './pages/products/Cintas'
+import Apliques from './pages/products/Apliques'
+import Decorables from './pages/products/Decorables'
+import Herramientas from './pages/products/Herramientas'
 import LoginV2 from './pages/LoginV2'
 import CreateProducts from './pages/CreateProducts'
 
@@ -41,7 +44,11 @@ function App() {
         <Routes>
           <Route path='/login' element={<LoginV2 />}/>
           <Route path='/' element={<Home />}/>
-          <Route path='/products' element={<Products />}/>
+          <Route path='/products/viniles' element={<Viniles />}/>
+          <Route path='/products/cintas' element={<Cintas />}/>
+          <Route path='/products/apliques' element={<Apliques />}/>
+          <Route path='/products/decorables' element={<Decorables />}/>
+          <Route path='/products/herramientas' element={<Herramientas />}/>
           <Route path='/products/create' element={<CreateProducts />}/>
         </Routes>
       </HashRouter>
