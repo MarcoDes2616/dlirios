@@ -339,7 +339,61 @@ form h4{
   margin-top: -.5rem;
 }
 
-
+.create_product{
+  width: 100%;
+  background-color: var(--button-color-alt);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7rem;
+}
+.form_create{
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  background-color: var(--title-color);
+  color: white;
+}
+.form_create input, select{
+  height: 2rem;
+  padding: 0 .5rem;
+}
+.input_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.norm{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.input_descripcion{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form_create button{
+  height: 2.5rem;
+  width: 50%;
+  margin: 2rem auto;
+}
+.total_products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background-color: #d7f2fa;
+}
+.total_products h4{
+  width: 100%;
+}
+.total_products div{
+  width: 200px;
+}
 
 @media screen and (min-width: 789px) {
   .producto_destacado{

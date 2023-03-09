@@ -9,6 +9,8 @@ import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/Loadder'
 import Products from './components/products/Products'
 import Acces from './components/navbar/Acces'
+import LoginV2 from './pages/LoginV2'
+import CreateProducts from './pages/CreateProducts'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -37,9 +39,10 @@ function App() {
         {isLoading && <Loadder />}
         <Navbar />
         <Routes>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/login' element={<LoginV2 />}/>
           <Route path='/' element={<Home />}/>
           <Route path='/products' element={<Products />}/>
+          <Route path='/products/create' element={<CreateProducts />}/>
         </Routes>
       </HashRouter>
     </div>
