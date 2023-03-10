@@ -197,3 +197,13 @@ export async function userExists(uid) {
     console.error("Error adding document: ", e);
   }
 }
+
+export async function getUserLogged(uid) {
+  try {
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+    return docSnap;
+  } catch (error) {
+    console.error("Error adding document: ", e);
+  }
+}

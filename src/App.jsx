@@ -14,6 +14,7 @@ import Decorables from './pages/products/Decorables'
 import Herramientas from './pages/products/Herramientas'
 import LoginV2 from './pages/LoginV2'
 import CreateProducts from './pages/CreateProducts'
+import { getUserLogged } from './Utils/fireBase.config'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -28,8 +29,16 @@ function App() {
     }, 2500)
   }, [])
 
-  const getStorage = () => {
-    if(localStorage.getItem("cart")){
+  const getStorage = async () => {
+    if(token != ""){
+      const {uid, email, displayName, photoURL} = await getUserLogged(token)
+      const userLogged = {
+        uid: uid,
+        email: email,
+        name: displayName,
+        image: photoURL
+    }
+      setUser(userLogged)
         setCart(JSON.parse(localStorage.getItem("cart")))
     } else {
         localStorage.setItem("cart", JSON.stringify([]))
