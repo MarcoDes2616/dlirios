@@ -224,6 +224,7 @@ menu {
 .rrss_wrapper.hide{
     left: -265px;
 }
+
 .contact_us, .users{
     display: flex;
     align-items: center;
@@ -234,6 +235,16 @@ menu {
 .users{
     justify-content: center;
     padding-left: 3.5rem;
+    position: relative;
+}
+.user_image{
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+    border: 1px solid var(--first-color);
 }
 .users a{
     color: var(--button-color);

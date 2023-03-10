@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import ws from "../../assets/img/ws.png"
 import insta from "../../assets/img/insta.png"
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
+import { setUser } from '../../store/slices/users.slice';
 
 const Acces = () => {
     const token = window.localStorage.getItem("token")
     const [rrss, setRrss] = useState(false)
     const [login, setLogin] = useState(false)
     const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,6 +24,7 @@ const Acces = () => {
     const logout = () => {
         localStorage.setItem("token", "")
         dispatch(setCart([]))
+        dispatch(setUser())
         alert("Te esperamos pronto con mas productos increibles!")
     }
 
@@ -31,7 +34,9 @@ const Acces = () => {
                 <i className={token ? 'bx bx-user-check bx-sm' : login ? 'bx bx-user bx-sm' : 'bx bx-user bx-sm animate'}></i>
                 <div className='users'>
                     {token ?
-                        <Link to={'/login'} onClick={() => logout()}>LogOut</Link> :
+                        <>
+                        <img className='user_image' src={user.image} alt="" />
+                        <Link to={'/login'} onClick={() => logout()}>LogOut</Link></> :
                         <Link to={'/login'}>Iniciar Sesión</Link>
                     }
                 </div>

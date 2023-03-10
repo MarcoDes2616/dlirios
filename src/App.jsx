@@ -42,8 +42,8 @@ function App() {
         {isLoading && <Loadder />}
         <Navbar />
         <Routes>
-          <Route path='/login' element={<Login />}/>
           <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<Login />}/>
           <Route path='/products/viniles' element={<Viniles />}/>
           <Route path='/products/cintas' element={<Cintas />}/>
           <Route path='/products/apliques' element={<Apliques />}/>

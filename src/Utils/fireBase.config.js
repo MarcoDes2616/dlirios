@@ -178,3 +178,22 @@ export async function getAllHerramientas() {
     console.error("Error adding document: ", e);
   }
 }
+
+export async function registerNewUser(user) {
+  try {
+    const usersRef = collection(db, "users");
+    await setDoc(doc(usersRef, user.uid), user);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export async function userExists(uid) {
+  try {
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists();
+  } catch (error) {
+    console.error("Error adding document: ", e);
+  }
+}
