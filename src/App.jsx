@@ -12,40 +12,46 @@ import Cintas from './pages/products/Cintas'
 import Apliques from './pages/products/Apliques'
 import Decorables from './pages/products/Decorables'
 import Herramientas from './pages/products/Herramientas'
-import LoginV2 from './pages/LoginV2'
 import CreateProducts from './pages/CreateProducts'
-import { getUserLogged } from './Utils/fireBase.config'
+import { getUserInfo, userExists } from './Utils/fireBase.config'
 import { setCart } from './store/slices/cart.slice'
+import { setUserInit } from './store/slices/users.slice'
+import { async } from '@firebase/util'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart)
+  const user = useSelector(state => state.user)
   const token = localStorage.getItem("token")
+  const cartStorage = localStorage.getItem("cart")
 
   useEffect(() => {
     getStorage()
-    dispatch(setIsLoading(true))
-    const interval = setInterval(() => {
-      dispatch(setIsLoading(false))
-    }, 2500)
   }, [])
 
   const getStorage = async () => {
-    if(token != ""){
-      const {uid, email, displayName, photoURL} = await getUserLogged(token)
-      const userLogged = {
-        uid: uid,
-        email: email,
-        name: displayName,
-        image: photoURL
-    }
-      setUser(userLogged)
-        setCart(JSON.parse(localStorage.getItem("cart")))
-    } else {
-        localStorage.setItem("cart", JSON.stringify([]))
-    }
+    dispatch(setIsLoading(true))
+    getUserLogged()
+    getCart()
+    dispatch(setIsLoading(false))
   };
+  const getCart = () => {
+    if (cartStorage[0]) {
+      dispatch(setCart(JSON.parse(localStorage.getItem("cart"))))
+    } else {
+      localStorage.setItem("cart", JSON.stringify([]))
+    }
+    dispatch(setIsLoading(false))
+  }
+  const getUserLogged = async () => {
+    if (token != "") {
+      const temp = await getUserInfo(token)
+      dispatch(setUserInit({ ...temp }))
+    } else {
+      localStorage.setItem("token", JSON.stringify())
+    }
+  }
 
   return (
     <div className="App">
@@ -53,14 +59,14 @@ function App() {
         {isLoading && <Loadder />}
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/products/viniles' element={<Viniles />}/>
-          <Route path='/products/cintas' element={<Cintas />}/>
-          <Route path='/products/apliques' element={<Apliques />}/>
-          <Route path='/products/decorables' element={<Decorables />}/>
-          <Route path='/products/herramientas' element={<Herramientas />}/>
-          <Route path='/products/create' element={<CreateProducts />}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/products/viniles' element={<Viniles />} />
+          <Route path='/products/cintas' element={<Cintas />} />
+          <Route path='/products/apliques' element={<Apliques />} />
+          <Route path='/products/decorables' element={<Decorables />} />
+          <Route path='/products/herramientas' element={<Herramientas />} />
+          <Route path='/products/create' element={<CreateProducts />} />
         </Routes>
       </HashRouter>
     </div>

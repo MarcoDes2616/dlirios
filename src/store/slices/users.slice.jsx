@@ -14,10 +14,15 @@ export const userSlice = createSlice({
                 image: photoURL
             }
             return newUser;
+        },
+        setUserInit: (state, action) => {
+            const data = action.payload;
+            
+            return data;
         }
     }
 })
 
-export const { setUser } = userSlice.actions;
+export const { setUser, setUserInit } = userSlice.actions;
 
 export default userSlice.reducer;
