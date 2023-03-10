@@ -15,11 +15,13 @@ import Herramientas from './pages/products/Herramientas'
 import LoginV2 from './pages/LoginV2'
 import CreateProducts from './pages/CreateProducts'
 import { getUserLogged } from './Utils/fireBase.config'
+import { setCart } from './store/slices/cart.slice'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
   const dispatch = useDispatch();
-  const [cart, setCart] = useState([])
+  const cart = useSelector(state => state.cart)
+  const token = localStorage.getItem("token")
 
   useEffect(() => {
     getStorage()
