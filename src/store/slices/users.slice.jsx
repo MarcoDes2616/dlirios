@@ -6,20 +6,8 @@ export const userSlice = createSlice({
     reducers: {
         setUser: (state, action) => {
             const data = action.payload;
-            const {uid, email, displayName, photoURL} = data
-            const newUser = {
-                uid: uid,
-                email: email,
-                name: displayName,
-                image: photoURL
-            }
-            return newUser;
-        },
-        setUserInit: (state, action) => {
-            const data = action.payload;
-            
             return data;
-        }
+        },
     }
 })
 

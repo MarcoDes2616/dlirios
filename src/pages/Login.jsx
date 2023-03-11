@@ -1,5 +1,5 @@
 import { setUser } from '../store/slices/users.slice';
-import { setCart } from '../store/slices/cart.slice';
+import { cargarProductosThunk, setCart } from '../store/slices/cart.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loadder from '../components/Loadder';
@@ -72,8 +72,15 @@ const Login = () => {
         try {
             const res = await signInWithPopup(auth, googleProvider);
             const isRegistred = await userExists(res.user.uid)
-            dispatch(setUser(res.user))
+            const {uid, displayName, photoURL, email} = res.user
+            dispatch(setUser({
+                uid: uid,
+                email: email,
+                name: displayName,
+                image: photoURL
+            }))
             localStorage.setItem("token", res.user.uid)
+            dispatch(cargarProductosThunk(res.user.uid))
             if(isRegistred){
                 setState(4)
             } else {

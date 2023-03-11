@@ -19,7 +19,6 @@ const Apliques = () => {
     const getproducts = async () => {
         dispatch(setIsLoading(true))
         const tmp = await getAllApliques()
-        console.log(tmp);
         setApliquesList(tmp)
         dispatch(setIsLoading(false))
     } 

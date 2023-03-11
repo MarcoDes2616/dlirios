@@ -19,7 +19,6 @@ const Decorables = () => {
     const getproducts = async () => {
         dispatch(setIsLoading(true))
         const tmp = await getAllDecorables()
-        console.log(tmp);
         setDecorablesList(tmp)
         dispatch(setIsLoading(false))
     }

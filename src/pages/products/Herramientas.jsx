@@ -19,7 +19,6 @@ const Herramientas = () => {
     const getproducts = async () => {
         dispatch(setIsLoading(true))
         const tmp = await getAllHerramientas()
-        console.log(tmp);
         setHerramientasList(tmp)
         dispatch(setIsLoading(false))
     } 

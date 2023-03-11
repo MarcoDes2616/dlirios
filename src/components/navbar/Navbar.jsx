@@ -28,17 +28,6 @@ const Navbar = () => {
 
     window.addEventListener("scroll", setState)
 
-    useEffect(() => {
-        cargarProductos()
-    }, [])
-
-
-    const cargarProductos = () => {
-        if(token){
-            const productsLocal = JSON.parse(localStorage.getItem("cart"))
-            dispatch(setCart(productsLocal))
-        }
-    }
 
     return (
         <header className={bgHeader ? "header_bg" : ""}>
@@ -62,7 +51,7 @@ const Navbar = () => {
                     <i className='bx bx-sm' id="theme_btn"></i>
                     <div className="icon_bag" id="cart-btn">
                         <i className='bx bx-shopping-bag bx-sm'></i>
-                        <span className="bag_count" id="bag_count">{ cart?.[0] ? cart?.length : "0"}</span>
+                        <span className="bag_count" id="bag_count">{ cart[0] ? cart.length : "0"}</span>
                     </div>
                     <i onClick={() => setIsOpen(!isOpen)} className='bx bx-grid-alt bx-sm' id="btn_menu"></i>
                 </div>

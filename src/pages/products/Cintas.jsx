@@ -19,7 +19,6 @@ const Cintas = () => {
     const getproducts = async () => {
         dispatch(setIsLoading(true))
         const tmp = await getAllCintas()
-        console.log(tmp);
         setCintasList(tmp)
         dispatch(setIsLoading(false))
     } 

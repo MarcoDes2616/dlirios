@@ -14,8 +14,8 @@ import Decorables from './pages/products/Decorables'
 import Herramientas from './pages/products/Herramientas'
 import CreateProducts from './pages/CreateProducts'
 import { getUserInfo, userExists } from './Utils/fireBase.config'
-import { setCart } from './store/slices/cart.slice'
-import { setUserInit } from './store/slices/users.slice'
+import { cargarProductosThunk, setCart } from './store/slices/cart.slice'
+import { setUser } from './store/slices/users.slice'
 import { async } from '@firebase/util'
 
 function App() {
@@ -24,34 +24,29 @@ function App() {
   const cart = useSelector(state => state.cart)
   const user = useSelector(state => state.user)
   const token = localStorage.getItem("token")
-  const cartStorage = localStorage.getItem("cart")
+  const cartStorage = JSON.parse(localStorage.getItem("cart"))
 
   useEffect(() => {
-    getStorage()
+    if (token) {
+      getStorage()
+    }
   }, [])
-
+  
   const getStorage = async () => {
     dispatch(setIsLoading(true))
     getUserLogged()
-    getCart()
+    dispatch(cargarProductosThunk(token))
     dispatch(setIsLoading(false))
   };
-  const getCart = () => {
-    if (cartStorage[0]) {
-      dispatch(setCart(JSON.parse(localStorage.getItem("cart"))))
-    } else {
-      localStorage.setItem("cart", JSON.stringify([]))
-    }
-    dispatch(setIsLoading(false))
-  }
   const getUserLogged = async () => {
     if (token != "") {
       const temp = await getUserInfo(token)
-      dispatch(setUserInit({ ...temp }))
+      dispatch(setUser({ ...temp }))
     } else {
       localStorage.setItem("token", JSON.stringify())
     }
   }
+
 
   return (
     <div className="App">

@@ -19,7 +19,6 @@ const Viniles = () => {
     const getproducts = async () => {
         dispatch(setIsLoading(true))
         const tmp = await getAllViniles()
-        console.log(tmp);
         setVinilesList(tmp)
         dispatch(setIsLoading(false))
     } 
