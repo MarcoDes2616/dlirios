@@ -21,7 +21,9 @@ const Apliques = () => {
         const tmp = await getAllApliques()
         setApliquesList(tmp)
         dispatch(setIsLoading(false))
-    } 
+    }
+
+    
     return (
         <div className='section'>
         {isLoading && <Loader />}
