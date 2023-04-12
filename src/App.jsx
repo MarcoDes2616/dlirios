@@ -2,7 +2,7 @@ import './App.css'
 import Login from './pages/Login'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/navbar/Navbar'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
@@ -49,7 +49,6 @@ function App() {
 
 
   return (
-    <div className="App">
       <HashRouter>
         {isLoading && <Loadder />}
         <Navbar />
@@ -64,7 +63,6 @@ function App() {
           <Route path='/products/create' element={<CreateProducts />} />
         </Routes>
       </HashRouter>
-    </div>
 
   )
 }

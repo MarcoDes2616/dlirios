@@ -1,24 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,700;0,800;1,300;1,500;1,700;1,800&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --first-color: rgb(140, 215, 1);
-  --button-color: hsl(285, 66%, 65%);
-  --button-color-alt: hsl(0, 0%, 21%);
-  --card-color: hsl(309, 100%, 93%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%);
-  --text-color-light: hsl(0, 0%, 55%);
-  --body-color: #d7f2fa;
-  --container-color: #fff;
-  --border-color: hsl(292, 22%, 87%);
-
-  /*========== Font and typography ==========*/
-  /* --body-font: sans-serif; */
+  --primary: #990099;
+  --secondary: #36BB60;
+  --success: #FFB800;
+  --light: #FF99FF;
+  --light_sec: #FFF;
+  --dark: #350036;
+  --dark_sec: #E3D7FA;
 }
-
 
 /*========== resets ==========*/
 *{
@@ -29,29 +20,18 @@
 }
 a{
     text-decoration: none;
-    color: var(--title-color);
 }
-a, button{
+a, button, .btn{
   cursor: pointer;
 }
 body{
     background-color: var(--border-color);
-    color: var(--title-color);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Rubik', sans-serif;
     width: 100%;
-    margin: auto;
+    background-color: var(--dark_sec);
 }
-body.dark{
-    --first-color: hsl(182, 53%, 74%);
-    --button-color: hsl(246, 16%, 12%);
-    --button-color-alt: hsl(0, 0%, 28%);
-    --card-color: rgb(38, 38, 54);
-    --title-color: hsl(0, 0%, 95%);
-    --text-color: hsl(0, 0%, 75%);
-    --body-color: hsl(250, 26%, 17%);
-    --container-color: hsl(246, 16%, 12%);
-    --border-color: hsl(0, 0%, 20%);
-}
+
+
 .loader{
   position: fixed;
   top: 0;
