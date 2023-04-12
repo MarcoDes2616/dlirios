@@ -52,10 +52,6 @@ const Navbar = () => {
                     <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                 </div>
             </div>
-            { pathname != "/login" ? <></> :
-            <header>
-            </header>
-            }
         </>
     );
 };

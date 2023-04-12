@@ -153,6 +153,9 @@ form h4{
   border: none;
   padding: 0 1rem;
 }
+.login_box .input_error{
+  background-color: rgba(249, 4, 4, 0.258);
+}
 .login_btn{
   width: 70%;
   margin: 1rem auto;
@@ -164,13 +167,8 @@ form h4{
   color: var(--light_sec);
   background-color: var(--secondary);
 }
-.login_box span{
-  color: rgb(169, 4, 4);
-  font-size: .9rem;
-  padding-left: .5rem;
-  margin-top: -.5rem;
-}
 
+/*====== creacion de productos */
 .create_product{
   width: 100%;
   background-color: var(--button-color-alt);

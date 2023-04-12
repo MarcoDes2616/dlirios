@@ -6,6 +6,7 @@ import Loadder from '../components/loader/Loadder';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { setIsLoading } from '../store/slices/isLoading.slice';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -13,27 +14,35 @@ const Login = () => {
     const dispatch = useDispatch();
     const pathname = useLocation()
     const isLoading = useSelector(state => state.isLoading);
-    const [errorMessage, setErrorMessage] = useState(undefined);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [error, setError] = useState(false);
+    const { register, handleSubmit, reset } = useForm();
     const [state, setState] = useState(0)
     const token = localStorage.getItem("token")
     const user = useSelector(state => state.user)
-    const [data, setData] = useState({})
-    const [telefono, setTelefono] = useState()
-    const [direccion, setDireccion] = useState()
-
+    const inputNull = { username: "", email: "", password: "", verifyPassword: "" };
+      
+    console.log(user);
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [pathname]);
 
-    const handleInput = ({name, value}) => {
-        setData({
-            ...data,
-
-        })
+    const submit = (data) => {
+        setError(false)
+        const {username, email, password, verifyPassword} = data
+        if (password != verifyPassword) {
+            setError(true)
+            return
+        }
+        axios.post("https://dliriosback-production.up.railway.app/api/v1/users", ({username, email, password}))
+            .then(res => {
+                dispatch(setUser(res.data))
+                setState(0)
+            })
+            .catch(error => console.log(error.response))
+            .finally(reset(inputNull)) 
     }
- 
+
     /* estados
     0 login
     1 register
@@ -53,27 +62,13 @@ const Login = () => {
                         <div className="login_box">
                             <label>Email<span>*</span></label>
                             <input type="email" placeholder="example@example.com" id='email'
-                                {...register('email', {
-                                    required: {
-                                        value: true,
-                                        message: '* Este campo es obligatorio'
-                                    },
-                                })}
+                                {...register('email')}
                             />
-                            {errors.email && <span className='error_alert'>{errors.email.message}</span>}
                             <label>Contraseña<span>*</span></label>
                             <input type="password" id='password' placeholder="********"
-                                {...register('password', {
-                                    required: {
-                                        value: true,
-                                        message: '* Este campo es obligatorio'
-                                    }
-                                })}
+                                {...register('password')}
                             />
-                            {errors.password && <span className='error_alert'>{errors.password.message}</span>}
                         </div>
-                        {errorMessage && <p className='error_login'>{errorMessage}</p>}
-                        {isLoading && <Loadder />}
                         <button className='login_btn'>Ingresar</button>
                     </form>
                 </div>
@@ -86,76 +81,39 @@ const Login = () => {
                 {isLoading && <Loadder />}
                 <div className="container_form">
                     <p onClick={() => setState(0)}>Ya tengo una cuenta</p>
-                    <form onSubmit={handleSubmit()}>
+                    <form onSubmit={handleSubmit(submit)}>
                         <h4>Registro</h4>
                         <div className="login_box">
                         <label>Nombre</label>
-                            <input
+                            <input className={error && "input_error"}
                                 type="text"
                                 placeholder="ingresa tu nombre"
-                                id='email'
-                                onChange={e => handleInput(e.target)}
-                                {...register('username', {
-                                    required: {
-                                        value: true,
-                                        message: 'Este campo es obligatorio'
-                                    },
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                        message: "Ingresa una dirección de correo valida example@example.com"
-                                    }
-                                })} />
-                            {errors.email && <p className='error_alert'>{errors.email.message}</p>}
+                                id='username'
+                                {...register('username')}/>
                             <label>Email</label>
-                            <input
+                            <input className={error && "input_error"} 
                                 type="email"
                                 placeholder="example@example.com"
                                 id='email'
-                                onChange={e => handleInput(e.target)}
-                                {...register('email', {
-                                    required: {
-                                        value: true,
-                                        message: 'Este campo es obligatorio'
-                                    },
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                        message: "Ingresa una dirección de correo valida example@example.com"
-                                    }
-                                })} />
-                            {errors.email && <p className='error_alert'>{errors.email.message}</p>}
+                                {...register('email')} />
                             <label>Contraseña</label>
-                            <input
+                            <input className={error && "input_error"}
                                 type="password"
                                 id='password'
                                 placeholder="********"
-                                onChange={e => handleInput(e.target)}
-                                {...register('password', {
-                                    required: {
-                                        value: true,
-                                        message: 'Este campo es obligatorio'
-                                    },
-                                    minLength: {
-                                        value: 6,
-                                        message: 'La contraseña debe tener al menos 6 caracteres'
-                                    },
-                                    // pattern: {
-                                    //     value: /^(?=.[A-Za-z])$/i,
-                                    //     message: "Ingresa una contraseña que contenga por lo menos"
-                                    // }
-                                })}
+                                {...register('password')}
                             />
-                            {errors.password && <p className='error_alert'>{errors.password.message}</p>}
                             <label>Confirmar contraseña</label>
-                            <input
+                            <input className={error && "input_error"}
                                 type="password"
                                 id='verifyPassword'
                                 placeholder="********"
-                                onChange={e => handleInput(e.target)}
                                 {...register('verifyPassword')} />
-                            {errors.verifyPassword && <p className='error_alert'>{errors.verifyPassword.message}</p>}
                         </div>
-                        {errorMessage ? errorMessage : ''}
-                        <button className='login_btn'>Registrarse</button>
+                        {error && 
+                        <p>* Contraseñas no coinciden</p>
+                        }
+                        <button type='submit' className='login_btn'>Registrarse</button>
                     </form>
                 </div >
             </div >

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import Card from "../../components/Card/Card"
+import Header from "./Header"
 
 const Home = () => {
   const pathname = useLocation()
@@ -22,44 +23,47 @@ const Home = () => {
 
 
   return (
-    <main>
-      <div className='home_products'>
-        <div className="categories">
-          <div className="category">
-            <img src={viniles} alt="" />
-            <h3>Viniles</h3>
+    <>
+      <Header />
+      <main>
+        <div className='home_products'>
+          <div className="categories">
+            <div className="category">
+              <img src={viniles} alt="" />
+              <h3>Viniles</h3>
+            </div>
+            <div className="category">
+              <img src={cintas} alt="" />
+              <h3>Cintas</h3>
+            </div>
+            <div className="category">
+              <img src={apliques} alt="" />
+              <h3>Apliques</h3>
+            </div>
+            <div className="category">
+              <img src={decorables} alt="" />
+              <h3>Decorables</h3>
+            </div>
+            <div className="category">
+              <img src={herramientas} alt="" />
+              <h3>Herramientas</h3>
+            </div>
+            <div className="category">
+              <img src={creaciones} alt="" />
+              <h3>Creaciones Dlirios</h3>
+            </div>
           </div>
-          <div className="category">
-            <img src={cintas} alt="" />
-            <h3>Cintas</h3>
-          </div>
-          <div className="category">
-            <img src={apliques} alt="" />
-            <h3>Apliques</h3>
-          </div>
-          <div className="category">
-            <img src={decorables} alt="" />
-            <h3>Decorables</h3>
-          </div>
-          <div className="category">
-            <img src={herramientas} alt="" />
-            <h3>Herramientas</h3>
-          </div>
-          <div className="category">
-            <img src={creaciones} alt="" />
-            <h3>Creaciones Dlirios</h3>
+          <div className="destacados">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
-        <div className="destacados">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 
