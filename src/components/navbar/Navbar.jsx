@@ -3,7 +3,7 @@ import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import logov from "../../assets/img/logo_v.png"
 import { useScroll, motion } from 'framer-motion';
-import { Link, useLocation, useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
 import Acces from './Acces';
@@ -43,11 +43,13 @@ const Navbar = () => {
                         style={{ scaleX: scrollYProgress }} />
                 </div>
             </nav>
-            <div className={isOpen ? "menu_slider" : "menu_slider hide"} id="menu">
+            <div onClick={() => setIsOpen(false)} className={isOpen ? "menu_slider" : "menu_slider hide"} id="menu">
                 <div className={isOpen ? "child_menu" : "child_menu hide"}>
                     <img src={logov} alt="logo empresa" />
-                    <a href="#">Home</a>
-                    <a href="#">Productos</a>
+                    <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/"}>Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/productos"}>Productos</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/destacados"}>Destacados</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                 </div>
             </div>
             <header>
