@@ -27,7 +27,7 @@ const Login = () => {
         window.scrollTo(0, 0)
     }, [pathname]);
 
-    const submit = (data) => {
+    const submitRegister = (data) => {
         setError(false)
         const {username, email, password, verifyPassword} = data
         if (password != verifyPassword) {
@@ -80,7 +80,7 @@ const Login = () => {
                 {isLoading && <Loadder />}
                 <div className="container_form">
                     <p onClick={() => setState(0)}>Ya tengo una cuenta</p>
-                    <form onSubmit={handleSubmit(submit)}>
+                    <form onSubmit={handleSubmit(submitRegister)}>
                         <h4>Registro</h4>
                         <div className="login_box">
                         <label>Nombre</label>
