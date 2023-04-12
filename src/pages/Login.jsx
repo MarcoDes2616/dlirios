@@ -20,7 +20,7 @@ const Login = () => {
     const token = localStorage.getItem("token")
     const user = useSelector(state => state.user)
     const inputNull = { username: "", email: "", password: "", verifyPassword: "" };
-      
+
     console.log(user);
 
     useEffect(() => {
@@ -36,7 +36,6 @@ const Login = () => {
         }
         axios.post("https://dliriosback-production.up.railway.app/api/v1/users", ({username, email, password}))
             .then(res => {
-                dispatch(setUser(res.data))
                 setState(0)
             })
             .catch(error => console.log(error.response))
