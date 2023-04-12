@@ -6,17 +6,11 @@ import Home from './pages/Home/Home'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
-import Loadder from './components/Loadder'
-import Viniles from './pages/products/Viniles'
-import Cintas from './pages/products/Cintas'
-import Apliques from './pages/products/Apliques'
-import Decorables from './pages/products/Decorables'
-import Herramientas from './pages/products/Herramientas'
-import CreateProducts from './pages/CreateProducts'
-import { getUserInfo, userExists } from './Utils/fireBase.config'
+import Loadder from './components/loader/Loadder'
 import { cargarProductosThunk, setCart } from './store/slices/cart.slice'
 import { setUser } from './store/slices/users.slice'
-import { async } from '@firebase/util'
+import ProductsCategory from './pages/products/ProductsCategory'
+import Contact from './pages/contact/Contact'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -27,25 +21,10 @@ function App() {
   const cartStorage = JSON.parse(localStorage.getItem("cart"))
 
   useEffect(() => {
-    if (token) {
-      getStorage()
-    }
+   
   }, [])
   
-  const getStorage = async () => {
-    dispatch(setIsLoading(true))
-    getUserLogged()
-    dispatch(cargarProductosThunk(token))
-    dispatch(setIsLoading(false))
-  };
-  const getUserLogged = async () => {
-    if (token != "") {
-      const temp = await getUserInfo(token)
-      dispatch(setUser({ ...temp }))
-    } else {
-      localStorage.setItem("token", JSON.stringify())
-    }
-  }
+  
 
 
   return (
@@ -54,13 +33,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/products/viniles' element={<Viniles />} />
-          <Route path='/products/cintas' element={<Cintas />} />
-          <Route path='/products/apliques' element={<Apliques />} />
-          <Route path='/products/decorables' element={<Decorables />} />
-          <Route path='/products/herramientas' element={<Herramientas />} />
-          <Route path='/products/create' element={<CreateProducts />} />
+          <Route path='/products/:category' element={<ProductsCategory />} />
         </Routes>
       </HashRouter>
 

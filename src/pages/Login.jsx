@@ -2,11 +2,9 @@ import { setUser } from '../store/slices/users.slice';
 import { cargarProductosThunk, setCart } from '../store/slices/cart.slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Loadder from '../components/Loadder';
+import Loadder from '../components/loader/Loadder';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { auth, registerNewUser, userExists } from '../Utils/fireBase.config';
 import { setIsLoading } from '../store/slices/isLoading.slice';
 
 
@@ -30,76 +28,7 @@ const Login = () => {
     }, [pathname]);
 
 
-    const cargarProductos = () => {
-        const productsLocal = JSON.parse(localStorage.getItem("cart"))
-        dispatch(setCart(productsLocal))
-    }
-
-    const submitForm = async data => {
-        await dispatch(userLoginEmail(data))
-            .then(() => {
-                navigate('/')
-                cargarProductos()
-            })
-            .catch((err) => {
-                if (err.code == 'auth/user-not-found') {
-                    setErrorMessage('Usuario no encontrado')
-                } else if (err.code == 'auth/wrong-password') {
-                    setErrorMessage('Contraseña incorrecta')
-                }
-                navigate(-1)
-            })
-    }
-    const submitFormR = async data => {
-        setErrorMessage(undefined)
-        if (data.password === data.verifyPassword) {
-            dispatch(userSingUpEmail(data))
-                .then(() => setState(1))
-                .catch((err) => {
-                    setErrorMessage(err.code);
-                })
-        } else {
-            setErrorMessage('Las contraseñas no coinciden')
-        }
-    }
-    
-    const handleOnClick = async () => {
-        const googleProvider = new GoogleAuthProvider();
-        await signInWithGoogle(googleProvider)
-    }
-
-    const signInWithGoogle = async (googleProvider) => {
-        try {
-            const res = await signInWithPopup(auth, googleProvider);
-            const isRegistred = await userExists(res.user.uid)
-            const {uid, displayName, photoURL, email} = res.user
-            dispatch(setUser({
-                uid: uid,
-                email: email,
-                name: displayName,
-                image: photoURL
-            }))
-            localStorage.setItem("token", res.user.uid)
-            dispatch(cargarProductosThunk(res.user.uid))
-            if(isRegistred){
-                setState(4)
-            } else {
-                setState(2)
-            }
-        } catch (err) {
-            console.error(err);
-        }
-    };
-    const submitRegister = async (data) => {
-        dispatch(setIsLoading(true))
-        data.registre = true;
-        const temp = {...data, ...user}
-        await registerNewUser(temp)
-        setTelefono()
-        setDireccion()
-        navigate("/")
-        dispatch(setIsLoading(false))
-    }
+ 
     /* estados
     0 login
     1 register
