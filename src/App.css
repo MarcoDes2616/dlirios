@@ -106,177 +106,14 @@ body{
   margin: auto;
   background-color: var(--body-color);
 }
-.producto_destacado{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background: url(./assets/img/bg_fp1.jpg);
-  background-position: 0 center;
-  padding-bottom: 4rem;
-  background-size: cover;
-}
-.img_destacado{
-  background: url(./assets/img/viniles.png);
-  width: 90%;
-  max-width: 600px;
-  height: 80vh;
-  align-self: flex-end;
-  border-radius: 0 0 0 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: 4px solid var(--button-color-alt);
-  border-top: none;
-  border-right: none;
-}
-.fp_description{
-  width: 100%;
-  max-width: 500px;
-  align-self: flex-start;
-  font-size: 1.6rem;
-  padding: 0 1rem;
-}
-.fp_description h4{
-  font-size: 1.8rem;
-  line-height: 2.5rem;
-}
-.fp_description h4 span{
-  color: var(--first-color);
-  font-size: 2.2rem;
-  filter: drop-shadow(1px 1px var(--text-color));
-}
-.fp_description h5{
-  margin-bottom: 1.7rem;
-  font-size: 1.8rem;
-}
-.fp_btn{
-  align-self: start;
-  width: 300px;
-  display: flex;
-  align-items: center;
-}
-.discover{
-  background-color: #757575;
-  width: 100px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  border-radius: 5px 0 0 5px;
-  font-size: 17px;
-}
-.add_cart{
-  background-color: var(--title-color);
-  width: 130px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--body-color);
-  border-radius: 0px 5px 5px 0px;
-}
-.discover:hover{
-  color: white;
-  cursor: pointer;
-}
-.add_cart:hover{
-  background-color: var(--first-color);
-  cursor: pointer;
-}
 
-/*=====PARALLAX============*/
-.parallax{
-  background: url(./assets/img/lirio2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 3.8rem;
-  border-top: 3px inset var(--border-color);
-  border-bottom: 3px inset var(--border-color);
-}
-.parallax p{
-  color: var(--body-color);
-  text-align: center;
-  width: 90%;
-  max-width: 550px;
-  font-size: 1.2rem;
-  filter: drop-shadow( 1px 1px var(--title-color));
-}
-.parallax p span{
-  color: var(--first-color);
-  font-size: 1.4rem;
-}
-
-/*============= FILTRO PRODUCTOS ===========*/
-.home_products{
-  background: url(./assets/img/bg_ph.jpg);
-  background-position: 0 center;
-  padding-bottom: 4rem;
-  background-size: cover;
-  padding-top: 4rem;
-}
-.filter_contain{
-  display: flex;
-  padding: 0 .8rem;
-  width: 100%;
-}
-.filter_contain h4{
-  font-size: 1rem;
-}
-.filter_contain p{
-  font-size: .8rem;
-}
-.all{
-  width: 20%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.materiales{
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border-left: 1px solid var(--first-color);
-  gap: .8rem;
-}
-.materiales div{
-  width: 43%;
-  max-width: 180px;
-  border: 1px solid;
-  text-align: center;
-  background-color: var(--title-color);
-  color: var(--body-color);
-  padding: 1rem .5rem;
-  border-radius: 5px;
-}
-.all:hover{
-  color: var(--first-color);
-  cursor: pointer;
-}
-.materiales div:hover{
-  background-color: var(--first-color);
-  cursor: pointer;
-}
 /*===============LOGIN=================*/
 .login_container{
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 7rem 0;
+  padding: 5rem 0;
 }
 .container_form{
   width: 100%;
@@ -286,14 +123,11 @@ body{
 .container_form p{
   cursor: pointer;
   float: right;
-  background: var(--button-color);
-  padding: .5rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px;
-  color: var(--body-color);
+  color: var(--dark);
   margin-bottom: 1rem;
   font-style: italic;
 }
+
 form{
   width: 100%;
   display: flex;
@@ -315,7 +149,7 @@ form h4{
   width: 100%;
   height: 2.5rem;
   border-radius: 8px;
-  background-color: var(--body-color);
+  background-color: var(--light_sec);
   border: none;
   padding: 0 1rem;
 }
@@ -323,9 +157,12 @@ form h4{
   width: 70%;
   margin: 1rem auto;
   height: 2.8rem;
-  border: 3px inset var(--body-color);
+  border: none;
   border-radius: 10px;
   font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--light_sec);
+  background-color: var(--secondary);
 }
 .login_box span{
   color: rgb(169, 4, 4);

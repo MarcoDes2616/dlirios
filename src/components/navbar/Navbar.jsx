@@ -3,7 +3,7 @@ import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import logov from "../../assets/img/logo_v.png"
 import { useScroll, motion } from 'framer-motion';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
 import Acces from './Acces';
@@ -15,7 +15,7 @@ const Navbar = () => {
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
-
+    const pathname = useLocation()
 
     return (
         <>
@@ -52,9 +52,10 @@ const Navbar = () => {
                     <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                 </div>
             </div>
+            { pathname != "/login" ? <></> :
             <header>
-
             </header>
+            }
         </>
     );
 };

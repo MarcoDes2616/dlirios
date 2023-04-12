@@ -18,7 +18,7 @@ const Login = () => {
     const [state, setState] = useState(0)
     const token = localStorage.getItem("token")
     const user = useSelector(state => state.user)
-    const [newRegister, setNewRegister] = useState({})
+    const [data, setData] = useState({})
     const [telefono, setTelefono] = useState()
     const [direccion, setDireccion] = useState()
 
@@ -27,7 +27,12 @@ const Login = () => {
         window.scrollTo(0, 0)
     }, [pathname]);
 
+    const handleInput = ({name, value}) => {
+        setData({
+            ...data,
 
+        })
+    }
  
     /* estados
     0 login
@@ -43,7 +48,7 @@ const Login = () => {
                 {isLoading && <Loadder />}
                 <div className="container_form">
                     <p onClick={() => setState(1)}>Aun no tengo una cuenta</p>
-                    <form onSubmit={handleSubmit(submitForm)}>
+                    <form onSubmit={handleSubmit()}>
                         <h4>Iniciar Sesión</h4>
                         <div className="login_box">
                             <label>Email<span>*</span></label>
@@ -53,15 +58,11 @@ const Login = () => {
                                         value: true,
                                         message: '* Este campo es obligatorio'
                                     },
-                                    // pattern: {
-                                    //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                    //     message: "Ingresa una dirección de correo valida example@example.com"
-                                    // }
                                 })}
                             />
                             {errors.email && <span className='error_alert'>{errors.email.message}</span>}
                             <label>Contraseña<span>*</span></label>
-                            <input type="password" id='password'
+                            <input type="password" id='password' placeholder="********"
                                 {...register('password', {
                                     required: {
                                         value: true,
@@ -74,7 +75,6 @@ const Login = () => {
                         {errorMessage && <p className='error_login'>{errorMessage}</p>}
                         {isLoading && <Loadder />}
                         <button className='login_btn'>Ingresar</button>
-                        <button onClick={() => handleOnClick()}>Login con Google</button>
                     </form>
                 </div>
             </div>
@@ -86,14 +86,32 @@ const Login = () => {
                 {isLoading && <Loadder />}
                 <div className="container_form">
                     <p onClick={() => setState(0)}>Ya tengo una cuenta</p>
-                    <form onSubmit={handleSubmit(submitFormR)}>
+                    <form onSubmit={handleSubmit()}>
                         <h4>Registro</h4>
                         <div className="login_box">
+                        <label>Nombre</label>
+                            <input
+                                type="text"
+                                placeholder="ingresa tu nombre"
+                                id='email'
+                                onChange={e => handleInput(e.target)}
+                                {...register('username', {
+                                    required: {
+                                        value: true,
+                                        message: 'Este campo es obligatorio'
+                                    },
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                        message: "Ingresa una dirección de correo valida example@example.com"
+                                    }
+                                })} />
+                            {errors.email && <p className='error_alert'>{errors.email.message}</p>}
                             <label>Email</label>
                             <input
                                 type="email"
                                 placeholder="example@example.com"
                                 id='email'
+                                onChange={e => handleInput(e.target)}
                                 {...register('email', {
                                     required: {
                                         value: true,
@@ -109,6 +127,8 @@ const Login = () => {
                             <input
                                 type="password"
                                 id='password'
+                                placeholder="********"
+                                onChange={e => handleInput(e.target)}
                                 {...register('password', {
                                     required: {
                                         value: true,
@@ -129,13 +149,13 @@ const Login = () => {
                             <input
                                 type="password"
                                 id='verifyPassword'
+                                placeholder="********"
+                                onChange={e => handleInput(e.target)}
                                 {...register('verifyPassword')} />
                             {errors.verifyPassword && <p className='error_alert'>{errors.verifyPassword.message}</p>}
                         </div>
                         {errorMessage ? errorMessage : ''}
-                        {isLoading && <Loadder />}
                         <button className='login_btn'>Registrarse</button>
-                        <button onClick={() => handleOnClick()}>Login con Google</button>
                     </form>
                 </div >
             </div >
