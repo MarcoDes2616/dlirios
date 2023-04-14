@@ -41,7 +41,7 @@ const Perfiles = ({ show, setShow }) => {
                             <img src={user.user_data?.avatar ? user.user_data.avatar : avatar} alt="" />
                         </div>
                         <div className="user_data">
-                            <p className="sesion">Haz iniciado sesión como:</p>
+                            <p className="sesion">Has iniciado sesión como:</p>
                             <p className="email">{user.email}</p>
                         </div>
                         <hr />
@@ -57,7 +57,7 @@ const Perfiles = ({ show, setShow }) => {
                     </div> :
                     <div className="sign_in">
                         <img src={fm} alt="lirio" />
-                        <p>Aun no haz iniciado sesión...</p>
+                        <p>Aun no has iniciado sesión...</p>
                         <hr />
                         <button className='btn_sign' onClick={() => navigate("/login")} >Iniciar sesión</button>
                     </div>
