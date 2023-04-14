@@ -42,6 +42,18 @@ const Login = () => {
             .finally(reset(inputNull)) 
     }
 
+    const submitLogin = (data) => {
+        axios.post("https://dliriosback-production.up.railway.app/api/v1/auth/login", (data))
+            .then(res => {
+                setUser(res.data)
+                localStorage.setItem("token", res.data.token)
+                console.log(res.data);
+                navigate("/")
+            })
+            .catch(error => console.log(error.response))
+            .finally(reset(inputNull)) 
+    }
+
     /* estados
     0 login
     1 register
@@ -56,7 +68,7 @@ const Login = () => {
                 {isLoading && <Loadder />}
                 <div className="container_form">
                     <p onClick={() => setState(1)}>Aun no tengo una cuenta</p>
-                    <form onSubmit={handleSubmit()}>
+                    <form onSubmit={handleSubmit(submitLogin)}>
                         <h4>Iniciar Sesión</h4>
                         <div className="login_box">
                             <label>Email<span>*</span></label>
