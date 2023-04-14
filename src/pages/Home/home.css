@@ -172,8 +172,8 @@ header .contact_us img{
         padding: 2rem 3rem;
     }
     .presentacion{
-        height: 85%;
-        gap: 2rem;
+        height: 100%;
+        gap: 3rem;
         margin-left: calc(50vw - 550px);
     }
     .presentacion h2{
