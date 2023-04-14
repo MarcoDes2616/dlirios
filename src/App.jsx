@@ -11,24 +11,35 @@ import { cargarProductosThunk, setCart } from './store/slices/cart.slice'
 import { setUser } from './store/slices/users.slice'
 import ProductsCategory from './pages/products/ProductsCategory'
 import Contact from './pages/contact/Contact'
+import axios from 'axios'
+import getConfig from './Utils/getConfig'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.cart)
-  const user = useSelector(state => state.user)
   const token = localStorage.getItem("token")
-  const cartStorage = JSON.parse(localStorage.getItem("cart"))
 
   useEffect(() => {
-   
+    dispatch(setIsLoading(true))
+    if (token) {
+      getDataByToken()
+    }
+    dispatch(setIsLoading(false))
   }, [])
-  
-  
+
+  const getDataByToken = () => {
+    axios.get("https://dliriosback-production.up.railway.app/api/v1/users", getConfig())
+      .then(res => {
+        dispatch(setUser(res.data))
+        localStorage.setItem("token", res.data.token)
+      })
+      .catch(error => alert(error.name))
+  }
 
 
   return (
       <HashRouter>
+        {isLoading && <Loadder /> }
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

@@ -45,9 +45,8 @@ const Login = () => {
     const submitLogin = (data) => {
         axios.post("https://dliriosback-production.up.railway.app/api/v1/auth/login", (data))
             .then(res => {
-                setUser(res.data)
+                dispatch(setUser(res.data))
                 localStorage.setItem("token", res.data.token)
-                console.log(res.data);
                 navigate("/")
             })
             .catch(error => console.log(error.response))

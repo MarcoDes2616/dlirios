@@ -11,7 +11,7 @@ const Perfiles = ({ show, setShow }) => {
     const token = localStorage.getItem("token")
     const navigate = useNavigate()
     const user = useSelector(state => state.user)
-    console.log(user);
+
     useEffect(() => {
         if (!isPresent) {
             gsap.to(ref.current, {
@@ -23,7 +23,7 @@ const Perfiles = ({ show, setShow }) => {
 
 
     return (
-        <div className="box" ref={ref} onBlur={() => setShow(!show)}>
+        <div className="box" ref={ref} >
             <div className="box_in">
                 {
                     token ?
