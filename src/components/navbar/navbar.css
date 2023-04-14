@@ -153,7 +153,7 @@ menu {
 .box {
     width: 95%;
     max-width: 450px;
-    height: 180px;
+    height: 190px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(3px);
@@ -170,7 +170,7 @@ menu {
 }
 
 .box_in {
-    background: url(../../assets/img/lirio_vector.png), var(--dark);
+    background: var(--dark);
     background-size: 30%;
     background-repeat: no-repeat;
     width: 95%;
@@ -189,8 +189,9 @@ menu {
     justify-content: space-between;
 }
 
-.sign_in .bx {
-    color: red;
+.sign_in img {
+    height: 45px;
+    filter: drop-shadow( 0 0 5px red);
 }
 
 .btn_sign {

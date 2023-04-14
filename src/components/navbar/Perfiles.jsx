@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, usePresence } from "framer-motion";
 import { gsap } from "gsap";
+import fm from "../../assets/img/lirio_vector.png"
 
 const Perfiles = ({ show, setShow }) => {
     const ref = useRef(null);
@@ -24,7 +25,7 @@ const Perfiles = ({ show, setShow }) => {
                     token ?
                     <div className="perfil"></div> : 
                     <div className="sign_in">
-                        <i class='bx bx-user-x bx-lg'></i>
+                        <img src={fm} alt="lirio" />
                         <p>Aun no haz iniciado sesión...</p>
                         <button className='btn_sign'>Quiero iniciar sesión!</button>
                     </div>
