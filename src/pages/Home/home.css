@@ -50,6 +50,7 @@ header {
     letter-spacing: 1px;
     font-size: 1.9rem;
     font-style: italic;
+    width: 80%;
 }
 
 .presentacion p{
@@ -206,6 +207,7 @@ header .contact_us img{
     }
     .presentacion h2{
         font-size: 2.5rem;
+        width: 100%;
     }
     .ws_span{
         right: 2rem;
