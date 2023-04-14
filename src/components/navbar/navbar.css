@@ -204,7 +204,7 @@ menu {
     height: 2rem;
     border: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 400;
     color: var(--light_sec);
     background: var(--secondary);
@@ -213,6 +213,76 @@ menu {
 .sign_in p {
     font-style: italic;
     font-weight: 100;
+}
+
+.perfil{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--dark_sec);
+    font-weight: 200;
+}
+.perfil_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--dark_sec);
+    filter: drop-shadow(0 0 13px var(--dark_sec));
+}
+.perfil_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.user_data{
+    width: 100%;
+    font-style: italic;
+}
+.user_data p{
+    width: 100%;
+}
+.email{
+    text-align: center;
+}
+.sesion{
+    font-size: .8rem;
+    text-align: left;
+    color: white;
+}
+.perfil hr{
+    width: 100%;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dark), transparent);
+}
+.call_data{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.call_data span{
+    width: 14px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(230, 4, 4);
+    color: white;
+    border: 1px solid white;
+    font-size: .8rem;
+    right: 4.5rem;
+    top: -.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 

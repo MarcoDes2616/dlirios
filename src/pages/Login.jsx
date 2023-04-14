@@ -21,7 +21,6 @@ const Login = () => {
     const user = useSelector(state => state.user)
     const inputNull = { username: "", email: "", password: "", verifyPassword: "" };
 
-    console.log(user);
 
     useEffect(() => {
         window.scrollTo(0, 0)
