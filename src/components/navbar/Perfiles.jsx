@@ -27,6 +27,7 @@ const Perfiles = ({ show, setShow }) => {
                     <div className="sign_in">
                         <img src={fm} alt="lirio" />
                         <p>Aun no haz iniciado sesión...</p>
+                        <hr />
                         <button className='btn_sign'>Quiero iniciar sesión!</button>
                     </div>
                 }

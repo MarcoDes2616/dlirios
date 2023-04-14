@@ -192,6 +192,12 @@ menu {
     height: 60px;
     filter: drop-shadow( 0 0 5px red);
 }
+.sign_in hr{
+    width: 100%;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dark), transparent);
+}
 
 .btn_sign {
     width: 70%;
