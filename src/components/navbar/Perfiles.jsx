@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, usePresence } from "framer-motion";
 import { gsap } from "gsap";
 
-const Perfiles = () => {
+const Perfiles = ({show, setShow}) => {
     const ref = useRef(null);
   const [isPresent, safeToRemove] = usePresence();
     useEffect(() => {
@@ -14,9 +14,9 @@ const Perfiles = () => {
         }
       }, [isPresent, safeToRemove]);
     return (
-        <div className="box" ref={ref}>
+        <div className="box" ref={ref} onBlur={() => setShow(!show)}>
             <div className="box_in">
-                
+
             </div>
         </div>
     );

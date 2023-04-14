@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import logov from "../../assets/img/logo_v.png"
@@ -18,11 +18,21 @@ const Navbar = () => {
     const token = localStorage.getItem("token")
     const pathname = useLocation()
     const [show, setShow] = useState(false);
+    const ref = useRef(null);
 
-    
+    useEffect(() => {
+        function handleClickOutside(event) {
+            setShow(false);
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [ref]);
+
     return (
         <>
-        <AnimatePresence>{show ? <Perfiles /> : null}</AnimatePresence>
+            <AnimatePresence>{show ? <Perfiles show={show} setShow={setShow} /> : null}</AnimatePresence>
             <nav>
                 <div className="nav__in">
                     <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
@@ -33,7 +43,7 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                     </menu>
                     <div className="icons_contain">
-                        <i onClick={() => {setShow(!show)}} className='bx bxs-user-pin bx-sm' ></i>
+                        <i onClick={() => { setShow(!show) }} className='bx bxs-user-pin bx-sm' ></i>
                         <div className="icon_bag" id="cart-btn">
                             <i className='bx bx-cart-alt bx-sm'></i>
                             <span className="bag_count" id="bag_count">{cart[0] ? cart.length : "0"}</span>

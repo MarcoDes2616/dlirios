@@ -174,7 +174,7 @@ header .contact_us img{
     .presentacion{
         height: 100%;
         gap: 3rem;
-        margin-left: calc(50vw - 550px);
+        margin-left: calc(50vw - 470px);
     }
     .presentacion h2{
         font-size: 2.5rem;

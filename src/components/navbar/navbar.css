@@ -339,17 +339,21 @@ menu {
         scale: 1;
     }
 } */
-
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
     nav{
         height: 5rem;
     }
-    .bx-grid-alt{
-        display: none;
-    }
     .box{
         top: 5.5rem;
-        right: calc(50% - 600px);
+        right: calc(50% - 45vw);
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    
+    .bx-grid-alt{
+        display: none;
     }
     menu {
         display: flex;
