@@ -8,6 +8,7 @@ header {
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    padding: 1rem;
 }
 
 .header_in {
@@ -24,6 +25,7 @@ header {
     align-items: center;
     background: linear-gradient(120deg, var(--dark), var(--primary));
     padding: 1.5rem;
+    z-index: 0;
 }
 
 .header_in img {
@@ -31,7 +33,39 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* margin: 1rem; */
+}
+.presentacion{
+    position: relative;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.presentacion h2{
+    letter-spacing: 1px;
+    font-size: 1.9rem;
+}
+
+.presentacion p{
+    font-style: italic;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.presentacion .contact_us{
+    display: flex;
+    width: 30%;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+header .contact_us img{
+    width: 40px;
+    height: 40px;
 }
 
 .home_products {
