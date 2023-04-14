@@ -43,7 +43,7 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                     </menu>
                     <div className="icons_contain">
-                        <i onClick={() => { setShow(!show) }} className='bx bxs-user-pin bx-sm' ></i>
+                        <i onClick={() => { setShow(!show) }} className={token ? "bx bx-user-check bx-sm" : 'bx bx-user-plus bx-sm'} ></i>
                         <div className="icon_bag" id="cart-btn">
                             <i className='bx bx-cart-alt bx-sm'></i>
                             <span className="bag_count" id="bag_count">{cart[0] ? cart.length : "0"}</span>
