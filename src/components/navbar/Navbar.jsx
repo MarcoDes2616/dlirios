@@ -2,10 +2,11 @@ import { useState } from 'react';
 import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import logov from "../../assets/img/logo_v.png"
-import { useScroll, motion } from 'framer-motion';
+import { useScroll, motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
+import Perfiles from './Perfiles';
 
 
 const Navbar = () => {
@@ -16,10 +17,12 @@ const Navbar = () => {
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
     const pathname = useLocation()
+    const [show, setShow] = useState(false);
 
     
     return (
         <>
+        <AnimatePresence>{show ? <Perfiles /> : null}</AnimatePresence>
             <nav>
                 <div className="nav__in">
                     <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
@@ -30,7 +33,7 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                     </menu>
                     <div className="icons_contain">
-                        <i className='bx bxs-user-pin bx-sm' ></i>
+                        <i onClick={() => {setShow(!show)}} className='bx bxs-user-pin bx-sm' ></i>
                         <div className="icon_bag" id="cart-btn">
                             <i className='bx bx-cart-alt bx-sm'></i>
                             <span className="bag_count" id="bag_count">{cart[0] ? cart.length : "0"}</span>

@@ -141,6 +141,33 @@ menu{
     box-shadow: 0 0 8px var(--light);
     transition: all .3s;
 }
+
+.box {
+    width: 95%;
+    max-width: 450px;
+    height: 150px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    border-top: 1px solid rgba(255, 255, 255, 0.26);
+    border-left: 1px solid rgba(255, 255, 255, 0.26);
+    margin: 0;
+    position: fixed;
+    top: 4rem;
+    right: .5rem;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box_in{
+    background: var(--dark);
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+  }
+
 /* 
 
 
