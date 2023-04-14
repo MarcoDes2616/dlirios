@@ -16,7 +16,6 @@ const Navbar = () => {
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
     const pathname = useLocation()
-    const [perfil, setPerfil]
 
     return (
         <>
@@ -53,7 +52,6 @@ const Navbar = () => {
                     <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                 </div>
             </div>
-
         </>
     );
 };
