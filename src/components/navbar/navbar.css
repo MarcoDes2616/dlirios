@@ -170,8 +170,7 @@ menu {
 }
 
 .box_in {
-    background: var(--dark);
-    background-size: 30%;
+    background: linear-gradient(90deg, var(--dark), var(--primary), var(--dark));
     background-repeat: no-repeat;
     width: 95%;
     height: 95%;
