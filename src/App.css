@@ -225,39 +225,6 @@ form h4{
   width: 200px;
 }
 
-@media screen and (min-width: 789px) {
-  .producto_destacado{
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-  .fp_description{
-    align-self: flex-end;
-    padding-bottom: 5rem;
-  }
-  .img_destacado{
-    height: 100vh;
-  }
-  .fp_description h4{
-    font-size: 2.2rem;
-    line-height: 3.5rem;  
-  }
-  .fp_description h4 span{
-    font-size: 2.7rem;
-  }
-  .fp_description h5{
-    font-size: 2.2rem;
-  }
-  .parallax{
-    background: url(./assets/img/parallax.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    top: 4.5rem;
-  }
-  .parallax p{
-    font-size: 1.4rem;
-  }
-  .parallax p span{
-    font-size: 1.6rem;
-  }  
+@media screen and (min-width: 789px) { 
 
 }

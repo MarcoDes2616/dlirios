@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './navbar.css'
 import logo from "../../assets/img/logo.png"
 import logov from "../../assets/img/logo_v.png"
@@ -6,7 +6,7 @@ import { useScroll, motion } from 'framer-motion';
 import { useNavigate, NavLink, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCart } from '../../store/slices/cart.slice';
-import Acces from './Acces';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +17,10 @@ const Navbar = () => {
     const token = localStorage.getItem("token")
     const pathname = useLocation()
 
+    
     return (
         <>
             <nav>
-                {/* <Acces /> */}
                 <div className="nav__in">
                     <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
                     <menu>

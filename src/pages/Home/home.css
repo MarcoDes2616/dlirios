@@ -1,4 +1,40 @@
-.home_products{
+header {
+    width: 100%;
+    height: 72vh;
+    margin-top: 3.8rem;
+    position: relative;
+    background: url(../../assets/img/bg_header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.header_in {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    right: calc(50% - 550px);
+    top: 8rem;
+    border-radius: 30px;
+    rotate: 45deg;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, var(--dark), var(--primary));
+    padding: 1.5rem;
+}
+
+.header_in img {
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* margin: 1rem; */
+}
+
+.home_products {
     width: 100%;
     background: linear-gradient(90deg, var(--dark), var(--primary));
     padding: 0;
@@ -7,7 +43,7 @@
     align-items: center;
 }
 
-.categories{
+.categories {
     width: 100%;
     max-width: 1200px;
     padding: 1rem;
@@ -18,7 +54,7 @@
     row-gap: 1rem;
 }
 
-.category{
+.category {
     position: relative;
     width: 150px;
     height: 100px;
@@ -31,20 +67,23 @@
     border-left: 1px solid rgba(255, 255, 255, 0.4);
     border-top: 1px solid rgba(255, 255, 255, 0.4);
 }
-.category img{
+
+.category img {
     position: absolute;
     width: 110%;
     transition: all .3s;
 }
 
-.category:hover{
+.category:hover {
     translate: 0 -5px;
 }
-.category:hover img{
+
+.category:hover img {
     width: 120%;
 
 }
-.category h3{
+
+.category h3 {
     color: white;
     position: relative;
     z-index: 1;
@@ -54,7 +93,7 @@
     font-size: 1.3rem;
 }
 
-.destacados{
+.destacados {
     padding: 3rem;
     background: url(../../assets/img/bg_products.png), rgb(235, 235, 235);
     background-size: 150%;
@@ -70,21 +109,39 @@
 }
 
 @keyframes bg {
-    0%{
+    0% {
         background-position: center;
     }
-    50%{
+
+    50% {
         background-position: calc(50% - 10px);
     }
-    100%{
+
+    100% {
         background-position: center;
     }
 }
 
-
+@media screen and (min-width: 500px) {
+    .header_in {
+        width: 900px;
+        height: 900px;
+        position: absolute;
+        right: calc(50% - 950px);
+        top: -5rem;
+    }
+}
 
 @media screen and (min-width: 900px) {
-    .categories{
+    .categories {
         padding: 2rem 3rem;
     }
+
+    /* header{
+        height: 67vh;
+        margin-top: 5rem;
+        background: url(../../assets/img/bg_headerd.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    } */
 }

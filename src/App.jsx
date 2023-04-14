@@ -29,7 +29,6 @@ function App() {
 
   return (
       <HashRouter>
-        {isLoading && <Loadder />}
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
