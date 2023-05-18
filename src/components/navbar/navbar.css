@@ -35,7 +35,16 @@ menu {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    color: var(--dark_sec);
+    color: var(--dark);
+    background-color: var(--light);
+    border-radius: 10px;
+    border: 2px solid #fed6fe;
+    padding: .3rem .7rem;
+    box-shadow: 0 0 8px var(--light);
+    transition: all .3s;
+}
+.icons_contain:hover{
+    box-shadow: 0 0 15px var(--light);
 }
 
 .icon_bag,

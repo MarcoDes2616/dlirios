@@ -9,8 +9,8 @@ const Header = () => {
                 <img src={bg_in} alt="background" />
             </div>
             <div className="presentacion">
-                <h2>La relación perfecta entre Calidad y Economía</h2>
-                <p>Viniles, cuerinas, <br /> cintas, apliques <br /> y mas+</p>
+                <h2>Viniles, cuerinas, cintas, apliques y mas+</h2>
+                <p>La relación perfecta <br /> entre Calidad y  <br /> Economía!</p>
                 <div className='contact_us'>
                     <a target={'_blank'}
                         href="https://www.instagram.com/vinilesycuerinasdlirios/">
@@ -19,6 +19,7 @@ const Header = () => {
                     <a target={'_blank'}
                         href="https://chat.whatsapp.com/DrTDWypZc0u0pGp89QleGr">
                         <img src={ws} alt="logo whatsapp" /></a>
+                        <span className="ws_span">1</span>
                 </div>
             </div>
         </header>
