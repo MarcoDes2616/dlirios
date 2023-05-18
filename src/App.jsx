@@ -13,6 +13,8 @@ import ProductsCategory from './pages/products/ProductsCategory'
 import Contact from './pages/contact/Contact'
 import axios from 'axios'
 import getConfig from './Utils/getConfig'
+import ProtectedRoutes from './components/ProtectedRoutes'
+import MyForm from './pages/admin/MyForm'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -46,6 +48,9 @@ function App() {
           <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/products/:category' element={<ProductsCategory />} />
+            <Route path='/create/products' element={<MyForm />} />
+          <Route element={<ProtectedRoutes />}>
+          </Route>
         </Routes>
       </HashRouter>
 

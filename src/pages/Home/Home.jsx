@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import Card from "../../components/Card/Card"
 import Header from "./Header"
+import axios from "../../Utils/axios"
 
 const Home = () => {
   const pathname = useLocation()
@@ -20,6 +21,16 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname]);
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const getData = () => {
+    axios("/products")
+      .then(res => console.log(res.data))
+      .catch(error => console.log(error.name))
+  }
 
 
   return (
