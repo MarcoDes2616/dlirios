@@ -46,3 +46,8 @@ form textarea{
     background-color: aliceblue;
     padding: 1rem;
 }
+
+.file{
+    width: 100px;
+    padding: 0;
+}
