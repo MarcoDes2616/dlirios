@@ -11,12 +11,12 @@ import { cargarProductosThunk, setCart } from './store/slices/cart.slice'
 import { setUser } from './store/slices/users.slice'
 import ProductsCategory from './pages/products/ProductsCategory'
 import Contact from './pages/contact/Contact'
-import axios from 'axios'
 import getConfig from './Utils/getConfig'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import MyForm from './pages/admin/MyForm'
 import Footer from './components/footer/Footer'
 import Resetpassword from './pages/Resetpassword'
+import axios from './Utils/axios'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -49,7 +49,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/reset-password' element={<Resetpassword />} />
+          <Route path='/reset_password/:token' element={<Resetpassword />} />
           <Route path='/products/category/:categoriId' element={<ProductsCategory />} />
           <Route element={<ProtectedRoutes />}>
             <Route path='/create/products' element={<MyForm />} />

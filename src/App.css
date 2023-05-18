@@ -168,6 +168,42 @@ form h4{
   background-color: var(--secondary);
 }
 
+.reset_email{
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reset_email input{
+  margin: 1rem;
+  width: 280px;
+  border: none;
+  background: #d7f2fa;
+  height: 2rem;
+  border-radius: 5px;
+  padding: 0 1rem;
+}
+
+.reset_email p{
+  width: 100%;
+  padding-right: 2rem;
+  text-align: right;
+  cursor: pointer;
+  color: #350036;
+  font-style: italic;
+}
+
+.reset_email form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*====== creacion de productos */
 .create_product{
   width: 100%;

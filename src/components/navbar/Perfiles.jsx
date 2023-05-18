@@ -8,14 +8,12 @@ import avatar from "../../assets/img/avatar.png"
 import { setUser } from "../../store/slices/users.slice";
 import { setCart } from "../../store/slices/cart.slice";
 
-const Perfiles = ({ show, setShow }) => {
+const Perfiles = ({user }) => {
     const ref = useRef(null);
     const [isPresent, safeToRemove] = usePresence();
     const token = localStorage.getItem("token")
     const navigate = useNavigate()
-    const user = useSelector(state => state.user)
     const dispatch = useDispatch()
-    
     useEffect(() => {
         if (!isPresent) {
             gsap.to(ref.current, {
@@ -31,7 +29,6 @@ const Perfiles = ({ show, setShow }) => {
         dispatch(setUser())
         alert("Te esperamos pronto con mas productos increibles!")
     }
-
     return (
         <div className="box" ref={ref} >
             <div className="box_in">

@@ -6,7 +6,8 @@ import Loadder from '../components/loader/Loadder';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { setIsLoading } from '../store/slices/isLoading.slice';
-import axios from 'axios';
+import { requestReset } from '../Utils/service';
+import axios from '../Utils/axios';
 
 
 const Login = () => {
@@ -42,14 +43,21 @@ const Login = () => {
     }
 
     const submitLogin = (data) => {
-        axios.post("/auth/login", (data))
+        axios.post("/system/login", data)
             .then(res => {
-                dispatch(setUser(res.data))
-                localStorage.setItem("token", res.data.token)
+                const {token, ...rest} = res.data
+                dispatch(setUser(rest))
+                localStorage.setItem("token", token)
                 navigate("/")
             })
-            .catch(error => console.log(error.response))
+            .catch(error => alert(error.name))
             .finally(reset(inputNull)) 
+    }
+
+    const handleReset = (data) => {
+        data.frontBaseUrl = "http://localhost:5173/#/reset_password"
+        requestReset(data)
+        setState(0)
     }
 
     /* estados
@@ -80,6 +88,7 @@ const Login = () => {
                         </div>
                         <button className='login_btn'>Ingresar</button>
                     </form>
+                    <p onClick={() => setState(5)}>Resetear contraseña</p>
                 </div>
             </div>
         )
@@ -184,5 +193,18 @@ const Login = () => {
             </div >
         )
     };
+    if (state === 5) {
+        return (
+            <div className='reset_email'>
+                <form onSubmit={handleSubmit(handleReset)}>
+                <label>Email<span>*</span></label>
+                <input type="email" placeholder="example@example.com" id='email'
+                    {...register('email')}/>
+                <button>Enviar</button>
+                </form>
+                <p onClick={() => setState(0)}>Volver al inicio de sesión...</p>
+            </div>
+        )
+    }
 }
 export default Login;

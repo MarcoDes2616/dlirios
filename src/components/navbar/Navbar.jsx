@@ -16,6 +16,7 @@ const Navbar = () => {
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
+    const user = useSelector(state => state.user)
     const pathname = useLocation()
     const [show, setShow] = useState(false);
     const ref = useRef(null);
@@ -32,7 +33,7 @@ const Navbar = () => {
 
     return (
         <>
-            <AnimatePresence>{show ? <Perfiles show={show} setShow={setShow} /> : null}</AnimatePresence>
+            <AnimatePresence>{show && <Perfiles user={user}/>}</AnimatePresence>
             <nav>
                 <div className="nav__in">
                     <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
