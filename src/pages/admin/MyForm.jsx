@@ -17,9 +17,11 @@ const MyForm = () => {
       ...prevData,
       [name]: value,
     }));
+    console.log(data);
   };
 
   const handleImageChange = (e) => {
+    console.log(e);
   };
   
   const handleSubmit = (e) => {
@@ -59,12 +61,12 @@ const MyForm = () => {
           <input type="file" name="file" onChange={handleImageChange} />
         </div>
         <div className="input_box">
-          <label>Image:</label>
-          <input type="file" name="file" onChange={handleImageChange} />
-        </div>
-        <div className="input_box">
-          <label>Image:</label>
-          <input type="file" name="file" onChange={handleImageChange} />
+          <label>Categoria:</label>
+          <select name="categoryId" id="" onChange={handleChange}>
+            {categories?.map((category) => (
+              <option key={category.id} value={category.id}>{category.name}</option>
+            ))}
+          </select>
         </div>
         <button type="submit">Submit</button>
       </form>
