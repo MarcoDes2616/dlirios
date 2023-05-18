@@ -18,8 +18,9 @@ const Header = () => {
                     </a>
                     <a target={'_blank'}
                         href="https://chat.whatsapp.com/DrTDWypZc0u0pGp89QleGr">
-                        <img src={ws} alt="logo whatsapp" /></a>
-                        <span className="ws_span">1</span>
+                        <img src={ws} alt="logo whatsapp" />
+                    </a>
+                    <span className="ws_span">1</span>
                 </div>
             </div>
         </header>

@@ -33,7 +33,7 @@ const Login = () => {
             setError(true)
             return
         }
-        axios.post("https://dliriosback-production.up.railway.app/api/v1/users", ({username, email, password}))
+        axios.post("/users", ({username, email, password}))
             .then(res => {
                 setState(0)
             })
@@ -42,7 +42,7 @@ const Login = () => {
     }
 
     const submitLogin = (data) => {
-        axios.post("https://dliriosback-production.up.railway.app/api/v1/auth/login", (data))
+        axios.post("/auth/login", (data))
             .then(res => {
                 dispatch(setUser(res.data))
                 localStorage.setItem("token", res.data.token)
@@ -65,7 +65,7 @@ const Login = () => {
             <div className='login_container'>
                 {isLoading && <Loadder />}
                 <div className="container_form">
-                    <p onClick={() => setState(1)}>Aun no tengo una cuenta</p>
+                    {/* <p onClick={() => setState(1)}>Aun no tengo una cuenta</p> */}
                     <form onSubmit={handleSubmit(submitLogin)}>
                         <h4>Iniciar Sesión</h4>
                         <div className="login_box">

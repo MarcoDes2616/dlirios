@@ -15,6 +15,7 @@ import axios from 'axios'
 import getConfig from './Utils/getConfig'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import MyForm from './pages/admin/MyForm'
+import Footer from './components/footer/Footer'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -47,11 +48,12 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/products/:category' element={<ProductsCategory />} />
+          <Route path='/products/category/:categoriId' element={<ProductsCategory />} />
           <Route element={<ProtectedRoutes />}>
             <Route path='/create/products' element={<MyForm />} />
           </Route>
         </Routes>
+        <Footer />
       </HashRouter>
 
   )
