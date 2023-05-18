@@ -30,7 +30,7 @@ function App() {
   }, [])
 
   const getDataByToken = () => {
-    axios.get("https://dliriosback-production.up.railway.app/api/v1/users", getConfig())
+    axios.get("/system/me", getConfig())
       .then(res => {
         dispatch(setUser(res.data))
         localStorage.setItem("token", res.data.token)
@@ -48,8 +48,8 @@ function App() {
           <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/products/:category' element={<ProductsCategory />} />
-            <Route path='/create/products' element={<MyForm />} />
           <Route element={<ProtectedRoutes />}>
+            <Route path='/create/products' element={<MyForm />} />
           </Route>
         </Routes>
       </HashRouter>

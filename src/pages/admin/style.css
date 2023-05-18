@@ -1,19 +1,23 @@
 .form_container{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
-    height: calc(100vh - 5rem);
     background-color: #121212;
     color: aliceblue;
     font-weight: 200;
+    color: aliceblue;
+    padding-top: 7rem;
 }
 form{
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 500px;
+    border: .5px solid aliceblue;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .input_box{
@@ -21,7 +25,7 @@ form{
     flex-direction: column;
 }
 
-.input_box input{
+.input_form{
     background-color: aliceblue;
     height: 2rem;
     border: none;
@@ -48,6 +52,73 @@ form textarea{
 }
 
 .file{
-    width: 100px;
+    width: 300px;
     padding: 0;
+}
+
+.check{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 500px;
+    border: .5px solid aliceblue;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.check p{
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.check .bx-spin{
+    color: red;
+}
+
+.check .bx-burst{
+    color: greenyellow;
+}
+
+.check button{
+    height: 2.5rem;
+    padding: .5rem;
+    align-self: flex-end;
+}
+
+.my_products{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.card_my_products{
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: .5px solid rgb(197, 197, 197);
+    border-radius: 5px;
+    background: #383838;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_my_products p{
+    font-weight: 200;
+    text-align: center;
+}
+
+.card_my_products img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
