@@ -261,6 +261,10 @@ form h4{
   width: 200px;
 }
 
+.link_hide{
+  display: none;
+}
+
 @media screen and (min-width: 789px) { 
 
 }

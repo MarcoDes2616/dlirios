@@ -13,6 +13,7 @@ import Card from "../../components/Card/Card"
 import Header from "./Header"
 import axios from "../../Utils/axios"
 import { getProductsByCategory } from "../../Utils/service"
+import Categories from "../../components/Categories"
 
 const Home = () => {
   const pathname = useLocation()
@@ -34,32 +35,7 @@ const Home = () => {
       <Header />
       <main>
         <div className='home_products'>
-          <div className="categories">
-            <div className="category" onClick={() => navigate("/products/category/2")}>
-              <img src={viniles} alt="" />
-              <h3>Viniles</h3>
-            </div>
-            <div className="category" onClick={() => navigate("/products/category/3")}>
-              <img src={cintas} alt="" />
-              <h3>Cintas</h3>
-            </div>
-            <div className="category" onClick={() => navigate("/products/category/4")}>
-              <img src={apliques} alt="" />
-              <h3>Apliques</h3>
-            </div>
-            <div className="category" onClick={() => navigate("/products/category/5")}>
-              <img src={decorables} alt="" />
-              <h3>Decorables</h3>
-            </div>
-            <div className="category" onClick={() => navigate("/products/category/6")}>
-              <img src={herramientas} alt="" />
-              <h3>Herramientas</h3>
-            </div>
-            <div className="category" onClick={() => navigate("/products/category/7")}>
-              <img src={creaciones} alt="" />
-              <h3>Creaciones Dlirios</h3>
-            </div>
-          </div>
+          <Categories />
           <div className="destacados">
             {products?.map((product) => (
               <Card key={product.id} product={product} />

@@ -161,7 +161,8 @@ header {
 .destacados {
     padding: 3rem;
     background: url(../../assets/img/bg_products.jpg);
-    background-size: 150%;
+    opacity: .4;
+    background-size: 120%;
     background-repeat: no-repeat;
     width: 100%;
     max-width: 1200px;
@@ -179,7 +180,7 @@ header {
     }
 
     50% {
-        background-position: calc(50% - 15px);
+        background-position: calc(50% - 25px);
     }
 
     100% {
