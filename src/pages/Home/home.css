@@ -160,7 +160,7 @@ header {
 
 .destacados {
     padding: 3rem;
-    background: linear-gradient(90deg, var(--primary), var(--dark));
+    background: url(../../assets/img/bg_products.jpg);
     background-size: 150%;
     background-repeat: no-repeat;
     width: 100%;
@@ -170,7 +170,7 @@ header {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: space-around;
-    animation: bg 7s infinite linear;
+    animation: bg 8s infinite linear;
 }
 
 @keyframes bg {
@@ -179,7 +179,7 @@ header {
     }
 
     50% {
-        background-position: calc(50% - 10px);
+        background-position: calc(50% - 15px);
     }
 
     100% {

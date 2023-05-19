@@ -25,9 +25,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer_store">
-          <h4>Tienda:</h4>
+          <h4>Mapa del sitio</h4>
           <hr />
           <ul>
+            <li onClick={() => navigate('/')}><i className='bx bx-chevron-right'></i>Inicio</li>
             <li>Productos</li>
             <p onClick={() => navigate("/products/category/2")}><i className='bx bx-chevron-right'></i>Viniles</p>
             <p onClick={() => navigate("/products/category/3")}><i className='bx bx-chevron-right'></i>Cintas</p>
