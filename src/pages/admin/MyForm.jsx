@@ -14,8 +14,6 @@ const MyForm = () => {
     getData(setProducts)
   }, []);
 
-  console.log(products);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setState(1);
@@ -28,7 +26,7 @@ const MyForm = () => {
       })
       .catch((error) => {
         setWasCreate(false);
-        alert(error.response);
+        alert(error.name);
       });
   };
 

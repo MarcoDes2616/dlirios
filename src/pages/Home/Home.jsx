@@ -20,7 +20,6 @@ const Home = () => {
   const navigate = useNavigate()
   const [products, setProducts] = useState()
 
-  console.log(products);
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname]);

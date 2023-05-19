@@ -1,4 +1,12 @@
 import axios from "./axios"
+const token = localStorage.getItem("token")
+
+
+const getConfig = () => ({
+    headers: { Authorization: `Bearer ${token}` }
+});
+
+export default getConfig;
 
 export const getData = (setProducts) => {
     axios.get("/products")

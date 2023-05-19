@@ -7,16 +7,15 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsLoading } from './store/slices/isLoading.slice'
 import Loadder from './components/loader/Loadder'
-import { cargarProductosThunk, setCart } from './store/slices/cart.slice'
-import { setUser } from './store/slices/users.slice'
 import ProductsCategory from './pages/products/ProductsCategory'
 import Contact from './pages/contact/Contact'
-import getConfig from './Utils/getConfig'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import MyForm from './pages/admin/MyForm'
 import Footer from './components/footer/Footer'
 import Resetpassword from './pages/Resetpassword'
+import { setUser } from './store/slices/users.slice'
 import axios from './Utils/axios'
+import getConfig from './Utils/service'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -35,11 +34,9 @@ function App() {
     axios.get("/system/me", getConfig())
       .then(res => {
         dispatch(setUser(res.data))
-        localStorage.setItem("token", res.data.token)
       })
       .catch(error => alert(error.name))
   }
-
 
   return (
       <HashRouter>
