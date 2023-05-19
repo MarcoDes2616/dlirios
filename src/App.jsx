@@ -16,6 +16,7 @@ import Resetpassword from './pages/Resetpassword'
 import { setUser } from './store/slices/users.slice'
 import axios from './Utils/axios'
 import getConfig from './Utils/service'
+import Politicas from './pages/Politicas'
 
 function App() {
   const isLoading = useSelector(state => state.isLoadign);
@@ -46,6 +47,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/contacto' element={<Contact />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/politicas-privacidad' element={<Politicas />} />
           <Route path='/reset_password/:token' element={<Resetpassword />} />
           <Route path='/products/category/:categoriId' element={<ProductsCategory />} />
           <Route element={<ProtectedRoutes />}>

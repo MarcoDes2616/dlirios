@@ -19,6 +19,7 @@ footer p{
     max-width: 1100px;
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
     justify-content: space-between;
 }
 
@@ -52,4 +53,37 @@ footer p{
 
 .footer div{
     width: 250px;
+    margin: auto;
+    align-self: flex-start;
+}
+
+.footer_store li{
+    list-style: none;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+.footer_store p{
+    padding-left: .5rem;
+    color: white;
+    margin: .3rem;
+    cursor: pointer;
+}
+
+.footer_store .bx{
+    color: var(--dark_sec);
+}
+
+.politicas{
+    padding: 1rem;
+    text-align: justify;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+@media screen and (min-width: 700px) {
+    .contact_footer, .ubicanos{
+        height: 210px;
+    }
 }

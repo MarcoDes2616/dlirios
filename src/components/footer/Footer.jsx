@@ -1,15 +1,14 @@
 import "./footer.css";
 import ws from "../../assets/img/ws.png";
 import insta from "../../assets/img/insta.png";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate()
+
   return (
     <footer>
       <div className="footer">
-        <div>
-          <h4>Ubicanos en:</h4>
-           <hr />
-        </div>
         <div className="contact_footer">
           <h4>Contacto:</h4>
           <hr />
@@ -25,21 +24,26 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div>
+        <div className="footer_store">
           <h4>Tienda:</h4>
           <hr />
           <ul>
             <li>Productos</li>
-            <p>Viniles</p>
-            <p>Cintas</p>
-            <p>Apliques</p>
-            <p>Decorables</p>
-            <p>Herramientas</p>
-            <p>Creaciones</p>
-            <li>Politicas de privacidad</li>
+            <p onClick={() => navigate("/products/category/2")}><i className='bx bx-chevron-right'></i>Viniles</p>
+            <p onClick={() => navigate("/products/category/3")}><i className='bx bx-chevron-right'></i>Cintas</p>
+            <p onClick={() => navigate("/products/category/4")}><i className='bx bx-chevron-right'></i>Apliques</p>
+            <p onClick={() => navigate("/products/category/5")}><i className='bx bx-chevron-right'></i>Decorables</p>
+            <p onClick={() => navigate("/products/category/6")}><i className='bx bx-chevron-right'></i>Herramientas</p>
+            <p onClick={() => navigate("/products/category/7")}><i className='bx bx-chevron-right'></i>Creaciones</p>
+            <li onClick={() => navigate('/politicas-privacidad')}><i className='bx bx-chevron-right'></i>Politicas de privacidad</li>
           </ul>
         </div>
+        <div className="ubicanos">
+          <h4>Ubicanos en:</h4>
+           <hr />
+        </div>
       </div>
+      <br />
       <p>© 2023 Insumos Dlirios. All rights reserved.</p>
       <p>Created by: Marco Cardenas (Full-stack Developer)</p>
     </footer>
