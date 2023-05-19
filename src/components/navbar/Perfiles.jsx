@@ -35,7 +35,7 @@ const Perfiles = ({user }) => {
                 {token ?
                     <div className="perfil">
                         <div className="perfil_img">
-                            <img src={user.user_data?.avatar ? user.user_data.avatar : avatar} alt="" />
+                            <img src={user.image ? user.image : avatar} alt="" />
                         </div>
                         <div className="user_data">
                             <p className="sesion">Has iniciado sesión como:</p>
