@@ -45,8 +45,8 @@ const Login = () => {
     const submitLogin = (data) => {
         axios.post("/system/login", data)
             .then(res => {
-                const {token, ...rest} = res.data
-                dispatch(setUser(rest))
+                const {token, user} = res.data
+                dispatch(setUser(user))
                 localStorage.setItem("token", token)
                 navigate("/")
             })
