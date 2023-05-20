@@ -1,10 +1,10 @@
 import { Navigate, Outlet} from 'react-router-dom';
 
 const ProtectedRoutes = () => {
-    const userToken = localStorage.getItem('userLocal');
+    const token = localStorage.getItem('token');
 
 
-    if (userToken) {
+    if (token) {
         return <Outlet />
     } else {
         return <Navigate to='/' />

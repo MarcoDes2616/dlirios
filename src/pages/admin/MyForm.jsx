@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "../../Utils/axios";
-import { getData } from "../../Utils/service";
+import { getCategories, getData } from "../../Utils/service";
 
 const MyForm = () => {
   const [categories, setCategories] = useState();
@@ -10,7 +10,7 @@ const MyForm = () => {
   const [products, setProducts] = useState()
 
   useEffect(() => {
-    axios.get("/categories").then((res) => setCategories(res.data));
+    getCategories(setCategories)
     getData(setProducts)
   }, []);
 

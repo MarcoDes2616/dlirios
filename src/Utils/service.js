@@ -14,6 +14,11 @@ export const getData = (setProducts) => {
       .catch(error => console.log(error.response))
   }
 
+export const getCategories = (setCategories) => {
+  axios.get("/categories")
+    .then((res) => setCategories(res.data));
+}
+
 export const getProductsByCategory = (categoriId, setProducts) => {
   axios.get(`/products?categoryId=${categoriId}`)
     .then(res => setProducts(res.data))
