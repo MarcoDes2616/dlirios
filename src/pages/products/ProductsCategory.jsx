@@ -31,7 +31,6 @@ const ProductsCategory = () => {
 
   window.addEventListener("scroll", changeStyle)
 
-  console.log(styles);
   return (
     <div className="product_category_container">
       {isLoading && <Loader />}
