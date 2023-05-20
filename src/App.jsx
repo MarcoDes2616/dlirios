@@ -36,7 +36,10 @@ function App() {
       .then(res => {
         dispatch(setUser(res.data))
       })
-      .catch(error => alert(error.name))
+      .catch(error => {
+        localStorage.setItem("token", "")
+        alert(error.name)
+      })
   }
 
   return (

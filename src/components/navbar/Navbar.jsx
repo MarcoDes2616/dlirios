@@ -38,10 +38,10 @@ const Navbar = () => {
                 <div className="nav__in">
                     <img className='logo' onClick={() => navigate("/")} src={logo} alt="logo empresa" />
                     <menu>
-                        <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/"}>Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/productos"}>Productos</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/destacados"}>Destacados</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
+                        <NavLink end className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/"}>Home</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/products/category/2"}>Productos</NavLink>
+                        <NavLink end className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/products/category/1"}>Destacados</NavLink>
+                        <NavLink end className={({ isActive }) => isActive ? "a_menu_active" : "a_menu"} to={"/contacto"}>Contacto</NavLink>
                     </menu>
                     <div className="icons_contain">
                         <i onClick={() => { setShow(!show) }} className={token ? "bx bx-user-check bx-sm" : 'bx bx-user-plus bx-sm'} ></i>

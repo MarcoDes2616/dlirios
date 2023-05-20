@@ -25,23 +25,27 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer_store">
-          <h4>Mapa del sitio</h4>
+          <h4>Mapa del sitio:</h4>
           <hr />
           <ul>
             <li onClick={() => navigate('/')}><i className='bx bx-chevron-right'></i>Inicio</li>
             <li>Productos</li>
-            <p onClick={() => navigate("/products/category/2")}><i className='bx bx-chevron-right'></i>Viniles</p>
-            <p onClick={() => navigate("/products/category/3")}><i className='bx bx-chevron-right'></i>Cintas</p>
-            <p onClick={() => navigate("/products/category/4")}><i className='bx bx-chevron-right'></i>Apliques</p>
-            <p onClick={() => navigate("/products/category/5")}><i className='bx bx-chevron-right'></i>Decorables</p>
-            <p onClick={() => navigate("/products/category/6")}><i className='bx bx-chevron-right'></i>Herramientas</p>
-            <p onClick={() => navigate("/products/category/7")}><i className='bx bx-chevron-right'></i>Creaciones</p>
+            <div className="footer_products">
+              <p onClick={() => navigate("/products/category/2")}><i className='bx bx-chevron-right'></i>Viniles</p>
+              <p onClick={() => navigate("/products/category/3")}><i className='bx bx-chevron-right'></i>Cintas</p>
+              <p onClick={() => navigate("/products/category/4")}><i className='bx bx-chevron-right'></i>Apliques</p>
+              <p onClick={() => navigate("/products/category/5")}><i className='bx bx-chevron-right'></i>Decorables</p>
+              <p onClick={() => navigate("/products/category/6")}><i className='bx bx-chevron-right'></i>Herramientas</p>
+              <p onClick={() => navigate("/products/category/7")}><i className='bx bx-chevron-right'></i>Creaciones</p>
+            </div>
             <li onClick={() => navigate('/politicas-privacidad')}><i className='bx bx-chevron-right'></i>Politicas de privacidad</li>
           </ul>
         </div>
         <div className="ubicanos">
           <h4>Ubicanos en:</h4>
            <hr />
+           <p className="ubicanos_text"><i className='bx bx-current-location bx-md'></i>Calle José Amesaba OE2-12, Quito - Ecuador</p>
+           <a target="_blanck" href="https://goo.gl/maps/Zx1RpGeVB1VXBo5F9?coh=178571&entry=tt">Ver en el mapa <i className='bx bxs-map-alt'></i></a>
         </div>
       </div>
       <br />
