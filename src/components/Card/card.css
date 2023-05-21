@@ -29,6 +29,7 @@
     z-index: 2;
     bottom: .5rem;
     right: .5rem;
+    color: var(--dark);
     filter: drop-shadow(0 0 1px var(--secondary));
 }
 
@@ -76,8 +77,8 @@
     border: 1px double var(--primary);
     animation: zoom .5s 1 ease-in-out;
     position: fixed;
-    top: calc(50% - 300px);
-    left: calc(50% - 300px);
+    top: calc(50% - 50vh);
+    left: calc(50% - 50vw);
     overflow: hidden;
     z-index: 1000;
 }
@@ -106,4 +107,10 @@
         scale: 1;
     }
 
+}
+
+@media screen and (min-width: 700px) {
+    .zoom{
+        left: calc(50% - 300px);
+    }
 }
