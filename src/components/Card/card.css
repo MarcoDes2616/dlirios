@@ -19,6 +19,14 @@
     height: calc(300px - 2rem);
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
+}
+
+.card_img .bx{
+    position: absolute;
+    z-index: 2;
+    bottom: .5rem;
+    right: .5rem;
 }
 
 .card_img img{
@@ -49,4 +57,37 @@
 
 .card:hover img{
     width: 115%;
+}
+
+.zoom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 600px;
+    height: 100vw;
+    max-height: 600px;
+    border-radius: 50%;
+    border: 1px dotted var(--primary);
+    animation: zoom .5s 1 ease-in-out;
+}
+
+.zoom.hide{
+    scale: .5;
+    display: none;
+}
+
+.img_zoom{
+    width: 105%;
+    height: 105%;
+
+}
+@keyframes zoom {
+    0% {
+        scale: .5;
+    };
+    100%{
+        scale: 1;
+    }
+
 }
