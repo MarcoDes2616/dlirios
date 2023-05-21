@@ -26,7 +26,7 @@ const Home = () => {
   }, [pathname]);
 
   useEffect(() => {
-    getProductsByCategory(1, setProducts)
+    getProductsByCategory("1", setProducts)
   }, [])
 
 
