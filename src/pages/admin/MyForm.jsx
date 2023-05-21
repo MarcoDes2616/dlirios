@@ -57,7 +57,7 @@ const MyForm = () => {
           <div className="input_box">
             <label>Categoria:</label>
             <select required className="input_form" name="categoryId" id="">
-              <option disabled defaultChecked value="">
+              <option disabled value="">
                 Elige una categoría
               </option>
               {categories?.map((category) => (
