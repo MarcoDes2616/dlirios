@@ -26,6 +26,7 @@ footer p{
 .footer h4{
     text-align: center;
     margin-bottom: 1rem;
+    letter-spacing: 1.4px;
 }
 
 .contact_icons{
@@ -82,8 +83,25 @@ footer p{
     margin: auto;
 }
 
+.footer_products{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ubicanos_text{
+    display: flex;
+    align-items: center;
+    letter-spacing: 1.5px;
+}
+
+.ubicanos a{
+    display: block;
+    color: var(--dark_sec);
+    padding: 1rem 2.4rem;
+}
+
 @media screen and (min-width: 700px) {
     .contact_footer, .ubicanos{
-        height: 230px;
+        height: 198px;
     }
 }

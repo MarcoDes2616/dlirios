@@ -208,8 +208,13 @@ menu {
     background: linear-gradient(90deg, transparent, var(--dark), transparent);
 }
 
+.btn_perfil{
+    display: flex;
+    width: 100%;
+}
+
 .btn_sign {
-    width: 70%;
+    width: 60%;
     height: 2rem;
     border: none;
     border-radius: 10px;
