@@ -44,7 +44,7 @@ const MyForm = () => {
           </div>
           <div className="input_box">
             <label>Price:</label>
-            <input required className="input_form" type="number" name="price" />
+            <input required className="input_form" type="number" step="0.01" name="price" />
           </div>
           <div className="input_box">
             <label>Stock:</label>
