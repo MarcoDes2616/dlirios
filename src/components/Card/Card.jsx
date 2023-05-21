@@ -10,7 +10,7 @@ const Card = ({product}) => {
             {imgSelected && 
             <div className={ imgSelected ? "zoom" : "zoom hide"}>
                 <img className="img_zoom" src={product.image} alt="" />
-                <i onClick={() => setImgSelected(false)} className='bx bx-exit-fullscreen bx-md'></i> 
+                <i onClick={() => setImgSelected(false)} className='bx bx-exit-fullscreen bx-lg'></i> 
             </div>
             } 
             <div className="card_img">
@@ -20,8 +20,8 @@ const Card = ({product}) => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <div className="product_details">
-                <p>$ {product.price.toFixed(2)}</p>
-                <p>{product.stock}</p>
+                <p>Precio: $ {product.price.toFixed(2)}</p>
+                <p>Disponibles: {product.stock}</p>
             </div>
         </div>
     );
